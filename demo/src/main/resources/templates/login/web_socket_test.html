@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+  <input type="text" id="username" placeholder="Username">
+  <button id="join-btn">JOIN</button>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+
+    document.getElementById("join-btn").addEventListener("click", function() {
+            let username = document.getElementById("username").value;
+            socket.connect();
+            socket.on('connect', function() {
+                console.log('connect');
+            });
+            socket.emit('test', username);
+        })
+  </script>
+</body>
+</html> 
