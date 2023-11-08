@@ -21,7 +21,12 @@
             <p>내용 : <input type="text" name = "data" value = "update data"> </p>
             <input type="submit">
         </form>
-    <p>-------------------------------------------</p>    
+    <p>-------------------------------------------</p>  
+    <form method = "POST" th:action = "@{/db/{id}/delete(id=${detail.id})}">
+        <button type = "submit" value="delete">Delete</button>
+    </form>
+    
+    <p>-------------------------------------------</p> 
     <a href = "/">back home</a>
 </body>
 </html> 

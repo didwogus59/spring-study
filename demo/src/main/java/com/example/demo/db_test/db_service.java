@@ -53,4 +53,8 @@ public class db_service {
         return null;
         
     }
+
+    public void delete_data(ObjectId id) {
+        repository.deleteById(id);
+    }
 }

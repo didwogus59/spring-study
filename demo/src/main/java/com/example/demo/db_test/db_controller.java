@@ -60,4 +60,10 @@ public class db_controller {
 
         return "db/detail";
     }
+
+    @RequestMapping(path = "/{id}/delete", method = RequestMethod.POST)
+    public String delete_data(@PathVariable ObjectId id, Model model) {
+        service.delete_data(id);
+        return "redirect:/db";
+    }
 }

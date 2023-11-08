@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
 <head> 
-    <title>Getting Started: Handling Form Submission</title>
+    <title>CSRF token test</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 	<h1>Form</h1>
     <form action="#" th:object="${test}" method="post">
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+        <p>CSRF Token: <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /></p>
     	<p>Title: <input type="text" th:field="*{title}" /></p>
         <p>data: <input type="text" th:field="*{Data}" /></p>
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
