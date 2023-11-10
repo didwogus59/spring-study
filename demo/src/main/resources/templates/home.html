@@ -4,6 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>homepage</title>
+  <div th:if="${not #strings.isEmpty(name)}">
+    <p th:text="|User : ${name}|" />
+    
+  </div>
 </head>
 
 <body>

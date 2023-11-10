@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.test;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/form")
 public class form_controller {
@@ -20,10 +22,16 @@ public class form_controller {
     }
 
     
+    // @RequestMapping(method = RequestMethod.POST)
+    // public String form_post(@ModelAttribute test test, Model model) {
+    //     model.addAttribute("test", test);
+    //     return "form/form_get";
+    // }
+
     @RequestMapping(method = RequestMethod.POST)
-    public String form_post(@ModelAttribute test test, Model model) {
+    public String form_post(HttpServletRequest req, Model model) {
+        test test = new test(req.getParameter("title"), req.getParameter("data"));
         model.addAttribute("test", test);
-        System.out.print(test.getData());
         return "form/form_get";
     }
 }
