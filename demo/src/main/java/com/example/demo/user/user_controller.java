@@ -39,7 +39,7 @@ public class user_controller {
 
     @RequestMapping(path = "/login/session", method = RequestMethod.POST)
     public String login_post(@ModelAttribute user user, HttpServletRequest httpServletRequest) {
-        if(service.login(user)) {
+        if(service.login_session(user)) {
             HttpSession session = httpServletRequest.getSession(true);
             session.setAttribute("name", user.getName());
             return "redirect:/";
