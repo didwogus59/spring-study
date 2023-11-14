@@ -1,23 +1,42 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
 </head>
+
 <body>
   <input type="text" id="username" placeholder="Username">
   <button id="join-btn">JOIN</button>
-  <script src="/socket.io/socket.io.js"></script>
   <script>
-    var socket = io();
-
-    document.getElementById("join-btn").addEventListener("click", function() {
-            let username = document.getElementById("username").value;
-            socket.connect();
-            socket.on('connect', function() {
-                console.log('connect');
-            });
-            socket.emit('test', username);
-        })
+    const stompClient = new StompJs.Client({
+      brokerURL: 'ws://localhost:5000/endpoint'
+    });
+    console.log("1");
+    stompClient.onConnect = (frame) => {
+      console.log('Connected: ' + frame);
+      console.log("2")
+      stompClient.subscribe('/broker/testB', (test) => {
+        console.log("3");
+        document.getElementById("username").value = " sent from server";
+      });
+    }
+    
+    stompClient.activate();
+    
+    document.getElementById("join-btn").addEventListener("click", function () {
+      console.log("4")
+      let username = document.getElementById("username").value;
+      console.log(username);
+      stompClient.publish({
+        destination: "/des/testM",
+        body: JSON.stringify({'data': username})
+      });
+      console.log("5")
+    })
   </script>
 </body>
-</html> 
+
+</html>

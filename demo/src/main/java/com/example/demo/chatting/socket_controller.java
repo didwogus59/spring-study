@@ -12,11 +12,24 @@ import com.example.demo.test;
 public class socket_controller {
 
 
-  @GetMapping("/socket/test")
+  @GetMapping("/socket/test1")
   public String test() {
     return "chatting/index";
   }
   
+  @GetMapping("/socket/test2")
+  public String test2() {
+    return "chatting/test";
+  }
+
+  @MessageMapping("/testM")
+  @SendTo("/broker/testB")
+  public test test_socket(test msg) throws Exception {
+    
+    System.out.println(msg.getData());
+    return new test("hello", msg.getData());
+  }
+
   @MessageMapping("/testMsg")
   @SendTo("/broker/greeting")
   public test greeting(test msg) throws Exception {
@@ -25,4 +38,6 @@ public class socket_controller {
     return new test("Hello", msg.getData());
   }
 
+
+  
 }
