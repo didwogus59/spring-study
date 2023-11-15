@@ -23,7 +23,10 @@ public class homeController {
 
     @GetMapping("/")
 	public String home(Model model, @SessionAttribute(name = "name", required = false) String name) {
-        model.addAttribute("name", name);
+        if(name != null)
+            model.addAttribute("name", name);
+        else
+            model.addAttribute("name", "no user");
 		return "home";
 	}
 
