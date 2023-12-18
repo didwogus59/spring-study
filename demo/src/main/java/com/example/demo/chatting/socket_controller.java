@@ -37,7 +37,4 @@ public class socket_controller {
     System.out.println(msg.getData());
     return new test("Hello", msg.getData());
   }
-
-
-  
 }

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.test;
 
@@ -25,13 +26,19 @@ public class form_controller {
     // @RequestMapping(method = RequestMethod.POST)
     // public String form_post(@ModelAttribute test test, Model model) {
     //     model.addAttribute("test", test);
-    //     return "form/form_get";
+    //    return "form/form_get";
     // }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String form_post(HttpServletRequest req, Model model) {
-        test test = new test(req.getParameter("title"), req.getParameter("data"));
-        model.addAttribute("test", test);
-        return "form/form_get";
+    public String form_post(@RequestParam String title, @RequestParam String data, Model model) {
+        model.addAttribute("test", new test(title, data));
+       return "form/form_get";
     }
+
+    // @RequestMapping(method = RequestMethod.POST)
+    // public String form_post(HttpServletRequest req, Model model) {
+    //     test test = new test(req.getParameter("title"), req.getParameter("data"));
+    //     model.addAttribute("test", test);
+    //     return "form/form_get";
+    // }
 }
