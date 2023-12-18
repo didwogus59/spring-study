@@ -24,7 +24,7 @@ public class user_controller {
     @Autowired
     private user_service service;
 
-    @RequestMapping(path = "/data/1234", method = RequestMethod.GET)
+    @RequestMapping(path = "/data", method = RequestMethod.GET)
     public String user_data(Model model) {
         model.addAttribute("user", new user());
         return "user/data";

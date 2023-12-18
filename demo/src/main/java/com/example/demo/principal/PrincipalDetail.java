@@ -1,4 +1,4 @@
-package com.example.demo.login;
+package com.example.demo.principal;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.example.demo.user.user;
 
 public class PrincipalDetail implements UserDetails{
-    private user user;
+    private user user = null;
 
     public PrincipalDetail(user user) {
         this.user = user;
@@ -26,7 +26,11 @@ public class PrincipalDetail implements UserDetails{
 
         return collections;
     }
-
+    public boolean isUser() {
+        if(user == null)
+            return false;
+        return true;
+    }
     // get Password 메서드
     @Override
     public String getPassword() {
