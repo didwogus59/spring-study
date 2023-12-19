@@ -34,6 +34,7 @@ public class homeController {
     //         model.addAttribute("name", "no user");
 	// 	return "home";
 	// }
+    
     @GetMapping("/")
 	public String home(Model model, Authentication auth) {
         
