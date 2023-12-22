@@ -2,6 +2,8 @@ package com.example.demo.user;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -11,10 +13,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.demo.jwt.jwtProvider;
 import com.example.demo.principal.PrincipalDetail;
 
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
@@ -23,6 +31,11 @@ public class user_controller {
 
     @Autowired
     private user_service service;
+
+    @Autowired
+    jwtProvider jwtProvider;
+
+
 
     @RequestMapping(path = "/data", method = RequestMethod.GET)
     public String user_data(Model model) {
@@ -62,11 +75,6 @@ public class user_controller {
         return "user/sign";
     }
 
-    @RequestMapping(path = "/login/session", method = RequestMethod.GET)
-    public String login() {
-        return "user/login";
-    }
-
     // @RequestMapping(path = "/login/session", method = RequestMethod.POST)
     // public String login_post(@ModelAttribute user user, HttpServletRequest httpServletRequest) {
     //     if(service.login_session(user)) {
@@ -79,10 +87,32 @@ public class user_controller {
     //     }
     // }
 
-    @RequestMapping(path = "/logout/session", method = RequestMethod.GET)
-    public String logout_session(HttpServletRequest req) {
-        HttpSession session = req.getSession();
-        session.invalidate();
+    // @RequestMapping(path = "/logout/session", method = RequestMethod.GET)
+    // public String logout_session(HttpServletRequest req) {
+    //     HttpSession session = req.getSession();
+    //     session.invalidate();
+    //     return "redirect:/";
+    // }
+
+    @RequestMapping(path = "/login/session", method = RequestMethod.GET)
+    public String login_session() {
+        return "user/login_session";
+    }
+
+    @RequestMapping(path = "/login/jwt", method = RequestMethod.GET)
+    public String login_page_jwt() {
+        return "user/login_jwt";
+    }
+
+    @RequestMapping(path = "/login/jwt", method = RequestMethod.POST)
+    public String login_jwt(HttpServletRequest req, HttpServletResponse res) {
+        String token = jwtProvider.createToken(req.getParameter("name"));
+        Cookie cookie = new Cookie("jwt", token);
+        cookie.setPath("/");
+        System.out.println(token);
+        res.addCookie(cookie);
+        res.setHeader("SET_COOKIE", "jwt");
         return "redirect:/";
     }
+    
 }

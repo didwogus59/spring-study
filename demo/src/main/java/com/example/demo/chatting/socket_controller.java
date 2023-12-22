@@ -25,7 +25,6 @@ public class socket_controller {
   @MessageMapping("/testM")
   @SendTo("/broker/testB")
   public test test_socket(test msg) throws Exception {
-    
     System.out.println(msg.getData());
     return new test("hello", msg.getData());
   }

@@ -54,4 +54,8 @@ public class user_service {
         return false;
     }
 
+    public Optional<user> getUserByName(String name) {
+        Optional<user> login_user = repository.findByName(name);
+        return login_user;
+    }
 }
