@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -30,7 +31,7 @@ public class SecurityConfig {
     private CorsConfig corsConfig;
 
     private final jwtProvider tokenProvider;
-    private final user_repository user_repository;
+
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         //http.addFilterBefore(new myfilter1(),  BasicAuthenticationFilter.class);
@@ -38,22 +39,20 @@ public class SecurityConfig {
             .requestMatchers(new AntPathRequestMatcher("/user/data")).authenticated()
             .anyRequest().permitAll());
         //session login
-        // http.formLogin((form_login) -> form_login
-        //     .loginPage("/user/login/session")
-        //     .loginProcessingUrl("/user/loginPR")
-        //     .usernameParameter("name")
-        //     .passwordParameter("password")
-        //     .defaultSuccessUrl("/"));
+        http.formLogin((form_login) -> form_login
+            .loginPage("/user/login/session")
+            .defaultSuccessUrl("/"))
+            .addFilterBefore(new customAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
         
-        http.formLogin((form_login) -> form_login.disable());
+        //http.formLogin((form_login) -> form_login.disable());
         
         http.httpBasic((http_basic)-> http_basic.disable());
 
-        http.apply(new MyCustomDsl());
+        http.apply(new jwtDsl());
 
         http.sessionManagement((session) ->
             session
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                .sessionCreationPolicy(SessionCreationPolicy.ALWAYS));
 
         http.csrf((csrf) -> csrf
             .ignoringRequestMatchers(new AntPathRequestMatcher("/**")));
@@ -70,12 +69,11 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    public class MyCustomDsl extends AbstractHttpConfigurer<MyCustomDsl, HttpSecurity> {
+    public class jwtDsl extends AbstractHttpConfigurer<jwtDsl, HttpSecurity> {
 		@Override
 		public void configure(HttpSecurity http) throws Exception {
 			AuthenticationManager authenticationManager = http.getSharedObject(AuthenticationManager.class);
 			http
-            .addFilter(new jwtAuthenticationFilter(authenticationManager, tokenProvider))
             .addFilter(new jwtAuthorizationFilter(authenticationManager, tokenProvider));
 		}
 	}

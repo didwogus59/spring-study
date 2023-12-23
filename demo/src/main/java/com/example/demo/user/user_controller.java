@@ -109,9 +109,9 @@ public class user_controller {
         String token = jwtProvider.createToken(req.getParameter("name"));
         Cookie cookie = new Cookie("jwt", token);
         cookie.setPath("/");
-        System.out.println(token);
+        cookie.setHttpOnly(true);
+        cookie.setMaxAge(60*60*24*7);
         res.addCookie(cookie);
-        res.setHeader("SET_COOKIE", "jwt");
         return "redirect:/";
     }
     

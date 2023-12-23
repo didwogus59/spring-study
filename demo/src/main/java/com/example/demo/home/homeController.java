@@ -41,12 +41,8 @@ public class homeController {
 	// }
     
     @GetMapping("/")
-	public String home(Model model, Authentication auth, @CookieValue(name = "jwt", required = false) String jwt) {
-        String name = null;
-        if(auth != null) {
-            name = auth.getName();
-            System.out.printf("auth name: %s\n",name);
-        }
+	public String home(Model model, HttpServletRequest req) {
+        String name = (String)req.getAttribute("name");
         if(name != null)
             model.addAttribute("name", name);
         else

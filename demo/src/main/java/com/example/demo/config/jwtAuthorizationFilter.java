@@ -29,6 +29,7 @@ public class jwtAuthorizationFilter extends BasicAuthenticationFilter{
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
         System.out.println("인증 필요 요청 됨");
+        req.setAttribute("name", null);
         Cookie[] cookies = req.getCookies();
         String token = null;
         for(Cookie cookie: cookies) {
@@ -40,9 +41,10 @@ public class jwtAuthorizationFilter extends BasicAuthenticationFilter{
             chain.doFilter(req, res);
             return;
         }
-        //token = token.split(" ")[1].trim();
-        Authentication auth = jwtProvider.getAuthentication(token);
-        SecurityContextHolder.getContext().setAuthentication(auth);
+        //security 영역에 세션으로 저장하면 권한 관리등이 편하지만 결국 jwt의 장점이 없어짐
+        //Authentication auth = jwtProvider.getAuthentication(token);
+        //SecurityContextHolder.getContext().setAuthentication(auth);
+        req.setAttribute("name", jwtProvider.getAccount(token));
         chain.doFilter(req, res);
     }
 }

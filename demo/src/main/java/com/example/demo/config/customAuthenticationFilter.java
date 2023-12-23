@@ -1,0 +1,7 @@
+package com.example.demo.config;
+
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+public class customAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+    
+}
