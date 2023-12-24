@@ -44,6 +44,7 @@ public class jwtAuthorizationFilter extends BasicAuthenticationFilter{
         //security 영역에 세션으로 저장하면 권한 관리등이 편하지만 결국 jwt의 장점이 없어짐
         //Authentication auth = jwtProvider.getAuthentication(token);
         //SecurityContextHolder.getContext().setAuthentication(auth);
+        //SecurityContextHolder.clearContext();
         req.setAttribute("name", jwtProvider.getAccount(token));
         chain.doFilter(req, res);
     }

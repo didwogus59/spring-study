@@ -38,16 +38,17 @@ public class SecurityConfig {
         http.authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
             .requestMatchers(new AntPathRequestMatcher("/user/data")).authenticated()
             .anyRequest().permitAll());
-        //session login
+                
+        http.httpBasic((http_basic)-> http_basic.disable());
+      
         http.formLogin((form_login) -> form_login
             .loginPage("/user/login/session")
-            .defaultSuccessUrl("/"))
-            .addFilterBefore(new customAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
-        
-        //http.formLogin((form_login) -> form_login.disable());
-        
-        http.httpBasic((http_basic)-> http_basic.disable());
+            .usernameParameter("name")
+            .passwordParameter("password")
+            .loginProcessingUrl("/user/login/session")
+            .defaultSuccessUrl("/"));
 
+        http.apply(new sessionDsl());
         http.apply(new jwtDsl());
 
         http.sessionManagement((session) ->
@@ -75,6 +76,14 @@ public class SecurityConfig {
 			AuthenticationManager authenticationManager = http.getSharedObject(AuthenticationManager.class);
 			http
             .addFilter(new jwtAuthorizationFilter(authenticationManager, tokenProvider));
+		}
+	}
+
+    public class sessionDsl extends AbstractHttpConfigurer<sessionDsl, HttpSecurity> {
+		@Override
+		public void configure(HttpSecurity http) throws Exception {
+			AuthenticationManager authenticationManager = http.getSharedObject(AuthenticationManager.class);
+            http.addFilterBefore(new customAuthenticationFilter(authenticationManager), UsernamePasswordAuthenticationFilter.class);
 		}
 	}
 }
