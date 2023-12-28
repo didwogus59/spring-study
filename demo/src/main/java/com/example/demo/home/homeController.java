@@ -45,7 +45,7 @@ public class homeController {
         String name = (String)req.getAttribute("name");
         if(name != null)
             model.addAttribute("name", name);
-        else if(auth.getName() != null)
+        else if(auth != null)
             model.addAttribute("name", auth.getName());
         else
             model.addAttribute("name", "no user");
