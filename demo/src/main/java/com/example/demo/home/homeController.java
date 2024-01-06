@@ -29,8 +29,6 @@ import jakarta.servlet.http.HttpServletResponse;
 @RequestMapping("/")
 public class homeController {
 
-    @Autowired
-    jwtProvider jwtProvider;
     // @GetMapping("/")
 	// public String home(Model model, @SessionAttribute(name = "name", required = false) String name) {
     //     if(name != null)
@@ -48,7 +46,7 @@ public class homeController {
         else if(auth != null)
             model.addAttribute("name", auth.getName());
         else
-            model.addAttribute("name", "no user");
+            model.addAttribute("name", null);
 		return "home";
 	}
 

@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.apache.catalina.Context;
+import org.apache.catalina.connector.Connector;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
 import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
 import org.springframework.boot.SpringApplication;
@@ -31,14 +32,6 @@ public class DemoApplication {
                 context.addConstraint(securityConstraint);
             }
         };
-
-
         return tomcat;
     }
-
-    /*
-    We need to redirect from HTTP to HTTPS. Without SSL, this application used
-    port 8082. With SSL it will use port 8443. So, any request for 8082 needs to be
-    redirected to HTTPS on 8443.
-     */
 }

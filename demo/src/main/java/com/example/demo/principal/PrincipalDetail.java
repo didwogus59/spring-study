@@ -12,6 +12,7 @@ public class PrincipalDetail implements UserDetails{
     private user user = null;
 
     public PrincipalDetail(user user) {
+        System.out.println("principal detail make");
         this.user = user;
     }
 

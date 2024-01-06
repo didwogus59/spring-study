@@ -5,18 +5,12 @@ import java.util.Optional;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 @Service
 public class db_service {
     @Autowired
     private db_repository repository;
-
-    @Autowired
-    private MongoTemplate template;
 
     public List<test_db> all_data() {
         return repository.findAll();

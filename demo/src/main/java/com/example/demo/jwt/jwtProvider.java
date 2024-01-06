@@ -86,6 +86,7 @@ public class jwtProvider {
     public String getAccount(String token) {
         // 만료된 토큰에 대해 parseClaimsJws를 수행하면 io.jsonwebtoken.ExpiredJwtException이 발생한다.
         try {
+            System.out.printf("jwt provider get account : ");
             System.out.println(Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody().get("name"));
         } catch (ExpiredJwtException e) {
             e.printStackTrace();
@@ -96,10 +97,11 @@ public class jwtProvider {
         return (String)Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody().get("name");
     }
 
-    // Authorization Header를 통해 인증을 한다.
-    public String resolveToken(HttpServletRequest request) {
-        return request.getHeader("Authorization");
-    }
+    // // Authorization Header를 통해 인증을 한다.
+    // public String resolveToken(HttpServletRequest request) {
+    //     return request.getHeader("Authorization");
+    // }
+    //cookie를 통해 진행하도록 수정
 
     // 토큰 검증
     public boolean validateToken(String token) {

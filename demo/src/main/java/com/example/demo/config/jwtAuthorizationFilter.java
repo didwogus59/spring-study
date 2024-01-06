@@ -1,22 +1,16 @@
 package com.example.demo.config;
 
 import java.io.IOException;
-
-import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties.Jwt;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 import com.example.demo.jwt.jwtProvider;
-import com.example.demo.user.user_repository;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 
 public class jwtAuthorizationFilter extends BasicAuthenticationFilter{
 
@@ -28,7 +22,6 @@ public class jwtAuthorizationFilter extends BasicAuthenticationFilter{
 
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
-        System.out.println("인증 필요 요청 됨");
         req.setAttribute("name", null);
         Cookie[] cookies = req.getCookies();
         String token = null;

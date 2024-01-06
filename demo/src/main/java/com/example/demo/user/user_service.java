@@ -24,7 +24,7 @@ public class user_service {
         }
         System.out.println(login_user.get().getPassword());
         if(passwordEncoder.matches(user.getPassword(), hash_password)) {
-            System.out.println("true");
+            System.out.println("user service login true");
             return true;
         }
         return false;

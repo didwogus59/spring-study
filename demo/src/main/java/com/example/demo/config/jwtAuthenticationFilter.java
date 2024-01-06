@@ -31,7 +31,7 @@ public class jwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     @Override
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException{
         System.out.println("JwtAuthenticationFilter : 진입");
-		
+
 		String name = null;
 		String password = null;
 		try {
@@ -43,8 +43,6 @@ public class jwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		// 유저네임패스워드 토큰 생성
         UsernamePasswordAuthenticationToken authToken= new UsernamePasswordAuthenticationToken(name, password);
 		
-		System.out.println("JwtAuthenticationFilter : 토큰생성완료");
-		
 		// authenticate() 함수가 호출 되면 인증 프로바이더가 유저 디테일 서비스의
 		// loadUserByUsername(토큰의 첫번째 파라메터) 를 호출하고
 		// UserDetails를 리턴받아서 토큰의 두번째 파라메터(credential)과
@@ -55,16 +53,21 @@ public class jwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		// Tip: 인증 프로바이더의 디폴트 암호화 방식은 BCryptPasswordEncoder
 		// 결론은 인증 프로바이더에게 알려줄 필요가 없음.
 		Authentication authentication = authenticationManager.authenticate(authToken);
-		PrincipalDetail principalDetailis = (PrincipalDetail) authentication.getPrincipal();
-		System.out.println("Authentication : "+principalDetailis.getUsername());
+		// PrincipalDetail principalDetailis = (PrincipalDetail) authentication.getPrincipal();
+		// System.out.println("Authentication : "+principalDetailis.getUsername());
 		return authentication;
     }
+	
 // JWT Token 생성해서 response에 담아주기
 	@Override
-	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
+	protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse res, FilterChain chain, Authentication authResult) throws IOException, ServletException {
 		String jwtToken = jwtProvider.createToken(authResult.getName());
-		System.out.printf("authorization jwt: %s\n",jwtToken);
+		System.out.printf("success authentication jwt: %s\n",jwtToken);
 		Cookie cookie = new Cookie("jwt",jwtToken);
-		response.addCookie(cookie);
+		cookie.setPath("/");
+	    cookie.setHttpOnly(true);
+        cookie.setMaxAge(60*60*24*7);
+		res.addCookie(cookie);
+		chain.doFilter(req, res);
 	}
 }

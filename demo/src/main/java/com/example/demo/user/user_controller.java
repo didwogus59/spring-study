@@ -4,8 +4,10 @@ package com.example.demo.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,6 +22,8 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -27,6 +31,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping(path = "/user")
+@RequiredArgsConstructor
 public class user_controller {
 
     @Autowired
@@ -35,6 +40,7 @@ public class user_controller {
     @Autowired
     jwtProvider jwtProvider;
 
+    private final  AuthenticationManagerBuilder authenticationManagerBuilder;
 
 
     @RequestMapping(path = "/data", method = RequestMethod.GET)
@@ -95,24 +101,57 @@ public class user_controller {
     // }
 
     @RequestMapping(path = "/login/session", method = RequestMethod.GET)
-    public String login_session() {
+    public String login_page_session() {
         return "user/login_session";
     }
 
+    @RequestMapping(path = "/login/session", method = RequestMethod.POST)
+    public String login_session(HttpServletRequest req, HttpServletResponse res) {
+        String name = req.getParameter("name");
+        String password = req.getParameter("password");
+        UsernamePasswordAuthenticationToken token = null;
+        try {
+            token = new UsernamePasswordAuthenticationToken(name, password);
+        } catch(Exception e) {
+            return "redirect:/user/login/session"; 
+        }
+        // if(token.isAuthenticated() == false) {
+        //     return "redirect:/user/login/session";    
+        // }
+        Authentication auth = authenticationManagerBuilder.getObject().authenticate(token);
+        SecurityContextHolder.getContext().setAuthentication(auth);
+        return "redirect:/";
+    }
+    
     @RequestMapping(path = "/login/jwt", method = RequestMethod.GET)
     public String login_page_jwt() {
         return "user/login_jwt";
     }
-
-    @RequestMapping(path = "/login/jwt", method = RequestMethod.POST)
-    public String login_jwt(HttpServletRequest req, HttpServletResponse res) {
-        String token = jwtProvider.createToken(req.getParameter("name"));
-        Cookie cookie = new Cookie("jwt", token);
-        cookie.setPath("/");
-        cookie.setHttpOnly(true);
-        cookie.setMaxAge(60*60*24*7);
-        res.addCookie(cookie);
+    @RequestMapping(path = "/login/session/auth", method = RequestMethod.POST)
+    public String login_session_complete() {
         return "redirect:/";
     }
+
+    
+    @RequestMapping(path = "/login/jwt/auth", method = RequestMethod.POST)
+    public String login_jwt_complete() {
+        return "redirect:/";
+    }
+    // @RequestMapping(path = "/login/jwt", method = RequestMethod.POST)
+    // public String login_jwt(HttpServletRequest req, HttpServletResponse res) {
+    //     String name = req.getParameter("name");
+    //     String password = req.getParameter("password");
+    //     if(service.login_jwt(new user(name,password))) {
+    //         String token = jwtProvider.createToken(req.getParameter("name"));
+    //         Cookie cookie = new Cookie("jwt", token);
+    //         cookie.setPath("/");
+    //         cookie.setHttpOnly(true);
+    //         cookie.setMaxAge(60*60*24*7);
+    //         res.addCookie(cookie);
+    //         return "redirect:/";
+    //     }
+        
+    //     return "redirect:/login/jwt";
+    // }
     
 }

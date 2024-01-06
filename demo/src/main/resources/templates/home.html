@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>homepage</title>
-  <div th:if="${name != 'no user'}">
+  <div th:if="${name != null}">
     <p th:text="|User : ${name}|" /> 
   </div>
-  <div th:if="${name == 'no user'}">
+  <div th:if="${name == null}">
     <p>no User</p>  
   </div>
 </head>

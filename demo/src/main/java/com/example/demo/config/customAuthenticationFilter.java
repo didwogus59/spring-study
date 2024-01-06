@@ -23,8 +23,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class customAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private final AuthenticationManager authenticationManager;
-
-
+	
     @Override
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException{
         System.out.println("custom authenticationFilter : 진입");
@@ -40,6 +39,8 @@ public class customAuthenticationFilter extends UsernamePasswordAuthenticationFi
 		// 유저네임패스워드 토큰 생성
         UsernamePasswordAuthenticationToken authToken= new UsernamePasswordAuthenticationToken(name, password);
 		setDetails(req,authToken);
+
+		//여기서 로그인 정보를 확인하여 로그인 성공 유무를 판별함
 		Authentication auth = authenticationManager.authenticate(authToken);
 		return auth;
     }
@@ -47,6 +48,7 @@ public class customAuthenticationFilter extends UsernamePasswordAuthenticationFi
 	@Override
 	protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse res, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         SecurityContextHolder.getContext().setAuthentication(authResult);
-        chain.doFilter(req, res);
+		//res.sendRedirect("/");
+		chain.doFilter(req,res);
 	}
 }
