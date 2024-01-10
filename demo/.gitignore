@@ -41,3 +41,5 @@ out/
 .env
 
 bootsecurity.p12
+
+spirng_boot_study.db

@@ -10,7 +10,7 @@
     
     <p>-------------------------------------------</p>
         <tr th:each = "test : ${testList}">
-            <a th:href="@{/db/{id}(id=${test.id})}" class="btn btn-primary" th:text="${test.title}"/>
+            <a th:href="@{/mysql/{id}(id=${test.id})}" class="btn btn-primary" th:text="${test.title}"/>
             <p>-------------------------------------------</p>    
         </tr>
 

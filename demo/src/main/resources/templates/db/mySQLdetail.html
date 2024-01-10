@@ -23,7 +23,7 @@
             <input type="submit">
         </form>
     <p>-------------------------------------------</p>  
-    <form method = "POST" th:action = "@{/db/{id}/delete(id=${detail.id})}">
+    <form method = "POST" th:action = "@{/mysql/{id}/delete(id=${detail.id})}">
         <input type = "hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
         <button type = "submit" value="delete">Delete</button>
     </form>

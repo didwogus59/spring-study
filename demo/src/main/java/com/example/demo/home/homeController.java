@@ -41,12 +41,9 @@ public class homeController {
     @GetMapping("/")
 	public String home(Model model, HttpServletRequest req, Authentication auth) {
         String name = (String)req.getAttribute("name");
-        if(name != null)
-            model.addAttribute("name", name);
-        else if(auth != null)
+        model.addAttribute("name", name);
+        if(auth != null)
             model.addAttribute("name", auth.getName());
-        else
-            model.addAttribute("name", null);
 		return "home";
 	}
 

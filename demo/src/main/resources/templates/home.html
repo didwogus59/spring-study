@@ -4,22 +4,17 @@
 <head>
   <meta charset="utf-8">
   <title>homepage</title>
-  <div th:if="${name != null}">
     <p th:text="|User : ${name}|" /> 
-  </div>
-  <div th:if="${name == null}">
-    <p>no User</p>  
-  </div>
 </head>
 
 <body>
-  <a href="/db" class="btn btn-primary">db get post</a><br>
+  <a href="/db" class="btn btn-primary">mongodb board</a><br>
+  <a href="/mysql" class="btn btn-primary">mySQL board</a><br>
   <a href="/form" class="btn btn-primary">form get post</a><br>
   <a href="/csrf" class="btn btn-primary">csrf test page</a><br>
   <a href="/user/sign" class="btn btn-primary">sign test page</a><br>
   <a href="/user/login/jwt" class="btn btn-primary">jwt login test page</a><br>
   <a href="/user/login/session" class="btn btn-primary">session login test page</a><br>
-  <!--<a href="/board" class="btn btn-primary">board test page not yet</a><br>-->
   <a href="/socket/test1" class="btn btn-primary">web soket test page1</a><br>
   <a href="/socket/test2" class="btn btn-primary">web soket test page2</a><br>
   <a href="/user/data" class="btn btn-primary">login check</a><br>

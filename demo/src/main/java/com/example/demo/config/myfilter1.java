@@ -13,7 +13,7 @@ public class myfilter1 implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-        //System.out.println("my Filter1");
+        System.out.println("my Filter1");
         chain.doFilter(request, response);
     }
 }
