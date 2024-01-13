@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.example.demo.jwt.jwtProvider;
 import com.example.demo.principal.PrincipalDetail;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -49,25 +50,6 @@ public class user_controller {
         return "user/data";
     }
 
-    @RequestMapping(path = "/test1", method = RequestMethod.GET)
-    public String test1(Authentication auth, @AuthenticationPrincipal PrincipalDetail userDetail) {
-        System.out.println(auth);
-        System.out.println("------------------------------");
-        PrincipalDetail detail = (PrincipalDetail)auth.getPrincipal();
-        System.out.println(auth.getPrincipal());
-        
-        System.out.println("------------------------------");
-        
-        System.out.println(detail);
-        System.out.println("------------------------------");
-        
-        System.out.println(detail.getUsername());
-        System.out.println("------------------------------");
-        
-        System.out.println(userDetail.getUsername());
-        return "user/data";
-    }
-
 
     @RequestMapping(path = "/sign", method = RequestMethod.GET)
     public String sign_get() {
@@ -80,6 +62,71 @@ public class user_controller {
             return "home";
         return "user/sign";
     }
+
+    @RequestMapping(path = "/login/session", method = RequestMethod.GET)
+    public String login_page_session() {
+        return "user/login_session";
+    }
+
+
+    
+    @RequestMapping(path = "/login/jwt", method = RequestMethod.GET)
+    public String login_page_jwt() {
+        return "user/login_jwt";
+    }
+
+
+
+    @RequestMapping(path = "/login/session/auth", method = RequestMethod.POST)
+    public String login_session_complete() {
+        return "redirect:/";
+    }
+
+    
+    @RequestMapping(path = "/login/jwt/auth", method = RequestMethod.POST)
+    public String login_jwt_complete() {
+        return "redirect:/";
+    }
+
+    @RequestMapping(path = "/logout/jwt", method = RequestMethod.GET)
+    public String logout_jwt(HttpServletResponse res) {
+        Cookie jwt = new Cookie("jwt", null);
+        jwt.setMaxAge(0);
+        jwt.setPath("/");
+        res.addCookie(jwt);
+        return "redirect:/";
+    }
+
+    @RequestMapping(path = "/logout/session", method = RequestMethod.GET)
+    public String logout_session(HttpServletRequest req, Authentication auth) {
+        try {
+            req.logout();
+        } catch (ServletException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return "redirect:/";
+    }
+
+    // @RequestMapping(path = "/test1", method = RequestMethod.GET)
+    // public String test1(Authentication auth, @AuthenticationPrincipal PrincipalDetail userDetail) {
+    //     System.out.println(auth);
+    //     System.out.println("------------------------------");
+    //     PrincipalDetail detail = (PrincipalDetail)auth.getPrincipal();
+    //     System.out.println(auth.getPrincipal());
+        
+    //     System.out.println("------------------------------");
+        
+    //     System.out.println(detail);
+    //     System.out.println("------------------------------");
+        
+    //     System.out.println(detail.getUsername());
+    //     System.out.println("------------------------------");
+        
+    //     System.out.println(userDetail.getUsername());
+    //     return "user/data";
+    // }
+
 
     // @RequestMapping(path = "/login/session", method = RequestMethod.POST)
     // public String login_post(@ModelAttribute user user, HttpServletRequest httpServletRequest) {
@@ -100,43 +147,7 @@ public class user_controller {
     //     return "redirect:/";
     // }
 
-    @RequestMapping(path = "/login/session", method = RequestMethod.GET)
-    public String login_page_session() {
-        return "user/login_session";
-    }
 
-    @RequestMapping(path = "/login/session", method = RequestMethod.POST)
-    public String login_session(HttpServletRequest req, HttpServletResponse res) {
-        String name = req.getParameter("name");
-        String password = req.getParameter("password");
-        UsernamePasswordAuthenticationToken token = null;
-        try {
-            token = new UsernamePasswordAuthenticationToken(name, password);
-        } catch(Exception e) {
-            return "redirect:/user/login/session"; 
-        }
-        // if(token.isAuthenticated() == false) {
-        //     return "redirect:/user/login/session";    
-        // }
-        Authentication auth = authenticationManagerBuilder.getObject().authenticate(token);
-        SecurityContextHolder.getContext().setAuthentication(auth);
-        return "redirect:/";
-    }
-    
-    @RequestMapping(path = "/login/jwt", method = RequestMethod.GET)
-    public String login_page_jwt() {
-        return "user/login_jwt";
-    }
-    @RequestMapping(path = "/login/session/auth", method = RequestMethod.POST)
-    public String login_session_complete() {
-        return "redirect:/";
-    }
-
-    
-    @RequestMapping(path = "/login/jwt/auth", method = RequestMethod.POST)
-    public String login_jwt_complete() {
-        return "redirect:/";
-    }
     // @RequestMapping(path = "/login/jwt", method = RequestMethod.POST)
     // public String login_jwt(HttpServletRequest req, HttpServletResponse res) {
     //     String name = req.getParameter("name");
@@ -152,6 +163,26 @@ public class user_controller {
     //     }
         
     //     return "redirect:/login/jwt";
+    // }
+
+
+
+        // @RequestMapping(path = "/login/session", method = RequestMethod.POST)
+    // public String login_session(HttpServletRequest req, HttpServletResponse res) {
+    //     String name = req.getParameter("name");
+    //     String password = req.getParameter("password");
+    //     UsernamePasswordAuthenticationToken token = null;
+    //     try {
+    //         token = new UsernamePasswordAuthenticationToken(name, password);
+    //     } catch(Exception e) {
+    //         return "redirect:/user/login/session"; 
+    //     }
+    //     // if(token.isAuthenticated() == false) {
+    //     //     return "redirect:/user/login/session";    
+    //     // }
+    //     Authentication auth = authenticationManagerBuilder.getObject().authenticate(token);
+    //     SecurityContextHolder.getContext().setAuthentication(auth);
+    //     return "redirect:/";
     // }
     
 }

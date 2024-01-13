@@ -41,18 +41,23 @@ public class homeController {
     @GetMapping("/")
 	public String home(Model model, HttpServletRequest req, Authentication auth) {
         String name = (String)req.getAttribute("name");
+        if(name != null) {
+            model.addAttribute("type", "jwt");
+        }
         model.addAttribute("name", name);
-        if(auth != null)
-            model.addAttribute("name", auth.getName());
+        if(auth != null) {
+            model.addAttribute("type", "session");
+            model.addAttribute("name", auth.getName()); 
+        }
+
 		return "home";
 	}
-
 
     @GetMapping("/json")
     public String json(@RequestBody test test, Model model) {
         model.addAttribute("test", test);
         
-        return "json.html";
+        return "json";
     }
     
 }

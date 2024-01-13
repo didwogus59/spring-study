@@ -38,8 +38,6 @@ public class SecurityConfig {
     @Autowired
     private final jwtProvider tokenProvider;
 
-    @Autowired
-    private PrincipalDetailsService principalDetailsService;
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         //http.addFilterBefore(new myfilter1(),  BasicAuthenticationFilter.class);
@@ -47,17 +45,12 @@ public class SecurityConfig {
             .requestMatchers(new AntPathRequestMatcher("/user/data")).authenticated()
             .anyRequest().permitAll());
       
-        
         http.httpBasic((basic) -> basic.disable());
         http.apply(new jwtDsl(tokenProvider));
         http.apply(new sessionDsl());
-        // http.formLogin((form_login) -> form_login
-        //     .loginProcessingUrl("/user/login/jwt")
-        //     .usernameParameter("name")
-        //     .passwordParameter("password")
-        //     .defaultSuccessUrl("/"));
-
-
+        http.logout((logout) -> logout
+            .logoutUrl("/user/logout/session")
+            .logoutSuccessUrl("/"));
         http.sessionManagement((session) ->
             session
                 .sessionCreationPolicy(SessionCreationPolicy.ALWAYS));
@@ -79,16 +72,6 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
     
-    // @Override 
-    // void configure(AuthenticationManagerBuilder auth) throws Exception {
-    //     auth.userDetailsService(principalDetailsService);
-    // }
-
-    // @Bean
-    // public UserDetailsService userDetailsService() {
-    //     return principalDetailsService;
-    // }
-    
     public class jwtDsl extends AbstractHttpConfigurer<jwtDsl, HttpSecurity> {
 
         private final jwtProvider jwtProvider;
@@ -102,7 +85,6 @@ public class SecurityConfig {
             jwtAuthenticationFilter filter = new jwtAuthenticationFilter(authenticationManager, jwtProvider);
             filter.setFilterProcessesUrl("/user/login/jwt/auth");
 			http
-            .addFilter(corsConfig.corsFilter())
             .addFilter(new jwtAuthorizationFilter(authenticationManager, jwtProvider))
             .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
 		}
@@ -118,96 +100,3 @@ public class SecurityConfig {
 		}
 	}
 }
-
-
-// @Configuration
-// @EnableWebSecurity
-// public class SecurityConfig {
-
-//     @Bean
-//     public SecurityFilterChain apiSecurity(HttpSecurity http) throws Exception {
-//         http.authorizeHttpRequests((authz) -> authz
-//                 .anyRequest().authenticated());
-//         http.addFilterBefore(apiAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
-//         return http.build();
-//     }
-
-//     private AuthenticationFilter apiAuthenticationFilter() {
-//         AuthenticationFilter authenticationFilter = new AuthenticationFilter(new ApiAuthenticationManagerResolver(), new BasicAuthenticationConverter());
-//         authenticationFilter.setSuccessHandler((request, response, authentication) -> {});
-//         return authenticationFilter;
-//     }
-
-//     public static class ApiAuthenticationManagerResolver implements AuthenticationManagerResolver<HttpServletRequest> {
-
-//         private final Map<RequestMatcher, AuthenticationManager> managers = Map.of(
-//                 new AntPathRequestMatcher("/dog/**"), new DogAuthenticationProvider()::authenticate,
-//                 new AntPathRequestMatcher("/cat/**"), new CatAuthenticationProvider()::authenticate
-//         );
-
-//         @Override
-//         public AuthenticationManager resolve(HttpServletRequest request) {
-//             for (Map.Entry<RequestMatcher, AuthenticationManager> entry : managers.entrySet()) {
-//                 if (entry.getKey().matches(request)) {
-//                     return entry.getValue();
-//                 }
-//             }
-//             throw new IllegalArgumentException("Unable to resolve AuthenticationManager");
-//         }
-//     }
-
-//     public static class DogAuthenticationProvider implements AuthenticationProvider {
-
-//         @Override
-//         public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-//             if (authentication.getName().endsWith("_dog")) {
-//                 return new UsernamePasswordAuthenticationToken(authentication.getName(), authentication.getCredentials(),
-//                         AuthorityUtils.createAuthorityList("ROLE_DOG"));
-//             }
-//             throw new BadCredentialsException("Username should end with _dog");
-//         }
-
-//         @Override
-//         public boolean supports(Class<?> authentication) {
-//             return true;
-//         }
-
-//     }
-
-//     public static class CatAuthenticationProvider implements AuthenticationProvider {
-
-//         @Override
-//         public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-//             if (authentication.getName().endsWith("_cat")) {
-//                 return new UsernamePasswordAuthenticationToken(authentication.getName(), authentication.getCredentials(),
-//                         AuthorityUtils.createAuthorityList("ROLE_CAT"));
-//             }
-//             throw new BadCredentialsException("Username should end with _cat");
-//         }
-
-//         @Override
-//         public boolean supports(Class<?> authentication) {
-//             return true;
-//         }
-
-// @Bean
-// public SecurityFilterChain dogApiSecurity(HttpSecurity http) throws Exception {
-//     http.requestMatchers((matchers) -> matchers
-//                 .antMatchers("/dog/**"));
-//     http.authorizeRequests((authz) -> authz
-//             .anyRequest().authenticated());
-//     http.httpBasic();
-//     http.authenticationProvider(new DogAuthenticationProvider());
-//     return http.build();
-// }
-
-// @Bean
-// public SecurityFilterChain catApiSecurity(HttpSecurity http) throws Exception {
-//     http.requestMatchers((matchers) -> matchers
-//                 .antMatchers("/cat/**"));
-//     http.authorizeRequests((authz) -> authz
-//             .anyRequest().authenticated());
-//     http.httpBasic();
-//     http.authenticationProvider(new CatAuthenticationProvider());
-//     return http.build();
-// }

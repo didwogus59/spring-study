@@ -4,7 +4,13 @@
 <head>
   <meta charset="utf-8">
   <title>homepage</title>
-    <p th:text="|User : ${name}|" /> 
+    <p th:text="|User : ${name}|"><br>
+    <div th:if = "${type == 'jwt'}">
+      <a href="/user/logout/jwt" class="btn btn-primary">jwt logout</a>
+    </div>
+    <div th:if = "${type == 'session'}">
+      <a href="/user/logout/session" class="btn btn-primary">session logout</a>
+    </div>
 </head>
 
 <body>

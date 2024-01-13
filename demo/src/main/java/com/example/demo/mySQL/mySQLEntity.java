@@ -27,6 +27,4 @@ public class mySQLEntity {
         this.title = title;
         this.data = data;
     }
-
 }
-//@Table(name = "board")
