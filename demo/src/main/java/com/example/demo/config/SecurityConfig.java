@@ -62,7 +62,8 @@ public class SecurityConfig {
             .addHeaderWriter(new XFrameOptionsHeaderWriter(
                 XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)));
 
-        
+        http.oauth2Login((oauth) -> oauth
+        .loginPage("/"));
                 
         return http.build();
     }
