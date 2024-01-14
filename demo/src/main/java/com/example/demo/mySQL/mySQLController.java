@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.test;
-import com.example.demo.db_test.test_db;
+import com.example.demo.mongodb_test.test_db;
 
 @Controller
 @RequestMapping("/mysql")

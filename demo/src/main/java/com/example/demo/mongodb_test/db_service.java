@@ -1,4 +1,4 @@
-package com.example.demo.db_test;
+package com.example.demo.mongodb_test;
 
 import java.util.List;
 import java.util.Optional;
