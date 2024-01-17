@@ -17,14 +17,16 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import com.example.demo.customUserDetail.CustomDetailsService;
 import com.example.demo.jwt.jwtProvider;
-import com.example.demo.principal.PrincipalDetailsService;
+import com.example.demo.oauth.CustomOAuth2Service;
 import com.example.demo.user.user_repository;
 
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 
 @Configuration
 @EnableWebSecurity
@@ -34,6 +36,8 @@ public class SecurityConfig {
     @Autowired
     private CorsConfig corsConfig;
     
+    @Autowired
+    private CustomOAuth2Service customoAuth2Service;
     
     @Autowired
     private final jwtProvider tokenProvider;
@@ -42,15 +46,19 @@ public class SecurityConfig {
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         //http.addFilterBefore(new myfilter1(),  BasicAuthenticationFilter.class);
         http.authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
-            .requestMatchers(new AntPathRequestMatcher("/user/data")).authenticated()
+            .requestMatchers(new AntPathRequestMatcher("/user/data"))
+            .hasRole("User")
             .anyRequest().permitAll());
       
         http.httpBasic((basic) -> basic.disable());
+
         http.apply(new jwtDsl(tokenProvider));
         http.apply(new sessionDsl());
+
         http.logout((logout) -> logout
             .logoutUrl("/user/logout/session")
             .logoutSuccessUrl("/"));
+
         http.sessionManagement((session) ->
             session
                 .sessionCreationPolicy(SessionCreationPolicy.ALWAYS));
@@ -63,7 +71,9 @@ public class SecurityConfig {
                 XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)));
 
         http.oauth2Login((oauth) -> oauth
-        .loginPage("/"));
+            .loginPage("/")
+            .userInfoEndpoint((userInfoEndpoint) -> userInfoEndpoint
+                .userService(customoAuth2Service)));
                 
         return http.build();
     }

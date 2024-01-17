@@ -9,9 +9,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.example.demo.customUserDetail.CustomDetail;
 import com.example.demo.home.homeController;
 import com.example.demo.jwt.jwtProvider;
-import com.example.demo.principal.PrincipalDetail;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.jsonwebtoken.Jwt;
@@ -53,15 +53,15 @@ public class jwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		// Tip: 인증 프로바이더의 디폴트 암호화 방식은 BCryptPasswordEncoder
 		// 결론은 인증 프로바이더에게 알려줄 필요가 없음.
 		Authentication authentication = authenticationManager.authenticate(authToken);
-		// PrincipalDetail principalDetailis = (PrincipalDetail) authentication.getPrincipal();
-		// System.out.println("Authentication : "+principalDetailis.getUsername());
+
 		return authentication;
     }
 	
-// JWT Token 생성해서 response에 담아주기
+// JWT Token 생성해서 response에 cookie로 담아주기
 	@Override
 	protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse res, FilterChain chain, Authentication authResult) throws IOException, ServletException {
-		String jwtToken = jwtProvider.createToken(authResult.getName());
+		String role = ((CustomDetail)authResult.getPrincipal()).getRole();
+		String jwtToken = jwtProvider.createToken(authResult.getName(), role);
 		System.out.printf("success authentication jwt: %s\n",jwtToken);
 		Cookie cookie = new Cookie("jwt",jwtToken);
 		cookie.setPath("/");

@@ -7,14 +7,15 @@
 </head>
 
 <body>
-  <p th:text="|User : ${name}|"></p><br>
+  <p th:text="|User : ${name}|"></p>
   <div th:if = "${type == 'jwt'}">
     <a href="/user/logout/jwt" class="btn btn-primary">jwt logout</a><br>
   </div>
   <div th:if = "${type == 'session'}">
-    <a href="/user/logout/session" class="btn btn-primary">session logout</a><br>
+    <a href="/user/logout/session" class="btn btn-primary">session, google logout</a><br>
   </div>
-  <a href="/db" class="btn btn-primary">mongodb board</a><br>
+  <br>
+  <a href="/mongoDB" class="btn btn-primary">mongodb board</a><br>
   <a href="/mysql" class="btn btn-primary">mySQL board</a><br>
   <a href="/form" class="btn btn-primary">form get post</a><br>
   <a href="/csrf" class="btn btn-primary">csrf test page</a><br>

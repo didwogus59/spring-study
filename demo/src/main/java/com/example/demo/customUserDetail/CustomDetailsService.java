@@ -1,4 +1,4 @@
-package com.example.demo.principal;
+package com.example.demo.customUserDetail;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class PrincipalDetailsService implements UserDetailsService {
+public class CustomDetailsService implements UserDetailsService {
 
     @Autowired
     private user_repository userRepository;
@@ -24,6 +24,6 @@ public class PrincipalDetailsService implements UserDetailsService {
                 .orElseThrow(() -> {
                     return new UsernameNotFoundException("해당 유저를 찾을 수 없습니다.");
                 });
-        return new PrincipalDetail(user);
+        return new CustomDetail(user);
     }
 }

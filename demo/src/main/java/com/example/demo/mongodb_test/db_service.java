@@ -1,5 +1,6 @@
 package com.example.demo.mongodb_test;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,6 +12,9 @@ import org.springframework.stereotype.Service;
 public class db_service {
     @Autowired
     private db_repository repository;
+
+    @Autowired
+    private child_repository repositoryC;
 
     public List<test_db> all_data() {
         return repository.findAll();
@@ -50,5 +54,23 @@ public class db_service {
 
     public void delete_data(ObjectId id) {
         repository.deleteById(id);
+    }
+
+    public List<child> all_child(test_db parent) {
+        return parent.getChilds();
+    }
+
+    public void create_child(ObjectId parentId, String data) {
+        Optional<test_db> tmp = repository.findById(parentId);
+        if(tmp != null) {
+            test_db test = tmp.get();
+            child tmpC = new child(data);
+            repositoryC.save(tmpC);
+            //test.getChilds().add(new child(data));
+            List<child> tmpL = test.getChilds();
+            tmpL.add(tmpC);
+            test.setChilds(tmpL);
+            repository.save(test);
+        }
     }
 }

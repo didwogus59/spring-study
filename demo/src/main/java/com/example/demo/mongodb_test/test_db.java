@@ -2,11 +2,15 @@ package com.example.demo.mongodb_test;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Document(collection = "test")
 @Data
@@ -21,9 +25,12 @@ public class test_db {
 
     private String data;
 
+    @DBRef
+    List<child> childs;
+
     public test_db(String title, String data) {
         this.title = title;
         this.data = data;
+        this.childs = new ArrayList<child>();
     }
-
 }

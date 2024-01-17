@@ -1,16 +1,18 @@
 package com.example.demo.config;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.example.demo.customUserDetail.CustomDetail;
 import com.example.demo.jwt.jwtProvider;
-import com.example.demo.principal.PrincipalDetail;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -47,6 +49,13 @@ public class customAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
 	@Override
 	protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse res, FilterChain chain, Authentication authResult) throws IOException, ServletException {
+		System.out.println("auth result : " + authResult);
+		System.out.println("auth result principal: " + authResult.getPrincipal());
+		System.out.println("auth result credential: " + authResult.getCredentials());
+		System.out.println("auth result name: " + authResult.getName());
+		//Iterator<GrantedAuthority> iterator = authResult.getAuthorities();
+		System.out.println("auth result authority: " + authResult.getAuthorities());
+		System.out.println("auth result detail: " + authResult.getDetails());
         SecurityContextHolder.getContext().setAuthentication(authResult);
 		//res.sendRedirect("/");
 		chain.doFilter(req,res);

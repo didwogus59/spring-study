@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.demo.customUserDetail.CustomDetail;
 import com.example.demo.jwt.jwtProvider;
-import com.example.demo.principal.PrincipalDetail;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;

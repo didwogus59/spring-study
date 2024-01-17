@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.example.demo.test;
+import com.example.demo.customUserDetail.CustomDetail;
 import com.example.demo.jwt.jwtProvider;
-import com.example.demo.principal.PrincipalDetail;
 import com.example.demo.user.user;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,15 +28,6 @@ import jakarta.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping("/")
 public class homeController {
-
-    // @GetMapping("/")
-	// public String home(Model model, @SessionAttribute(name = "name", required = false) String name) {
-    //     if(name != null)
-    //         model.addAttribute("name", name);
-    //     else
-    //         model.addAttribute("name", "no user");
-	// 	return "home";
-	// }
     
     @GetMapping("/")
 	public String home(Model model, HttpServletRequest req, Authentication auth) {
@@ -46,6 +37,8 @@ public class homeController {
         }
         model.addAttribute("name", name);
         if(auth != null) {
+            System.out.printf("auth : ");
+            System.out.println(auth);
             model.addAttribute("type", "session");
             model.addAttribute("name", auth.getName()); 
         }

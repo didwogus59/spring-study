@@ -1,21 +1,30 @@
-package com.example.demo.principal;
+package com.example.demo.customUserDetail;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import com.example.demo.user.user;
 
-public class PrincipalDetail implements UserDetails{
-    private user user = null;
+public class CustomDetail implements UserDetails, OAuth2User{
 
-    public PrincipalDetail(user user) {
-        System.out.println("principal detail make");
+    private user user = null;
+    private static final long serialVersionUID = 1L;
+	private Map<String, Object> attributes;
+
+    public CustomDetail(user user) {
+        System.out.println("custom detail make");
         this.user = user;
     }
 
+    public CustomDetail(user user, Map<String, Object> attribute) {
+        this.user = user;
+		this.attributes = attributes;
+    }
 
     // 권한 관련 작업을 하기 위한 role return
     @Override
@@ -44,6 +53,9 @@ public class PrincipalDetail implements UserDetails{
         return user.getName();
     }
 
+    public String getRole() {
+        return user.getRole();
+    }
     // 계정이 만료 되었는지 (true: 만료X)
     @Override
     public boolean isAccountNonExpired() {
@@ -67,5 +79,16 @@ public class PrincipalDetail implements UserDetails{
     public boolean isEnabled() {
         return true;
     }
-    
+
+	// 리소스 서버로 부터 받는 회원정보
+	@Override
+	public Map<String, Object> getAttributes() {
+		return attributes;
+	}
+
+	// User의 PrimaryKey
+	@Override
+	public String getName() {
+		return user.getId()+"";
+	}
 }

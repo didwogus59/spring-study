@@ -34,6 +34,7 @@ public class user_service {
         Optional<user> check = repository.findByName(user.getName());
         if(!check.isPresent()) {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
+            user.setRole("User");
             repository.insert(user);
             return true;
         }

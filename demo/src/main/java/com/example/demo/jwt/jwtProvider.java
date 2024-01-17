@@ -15,7 +15,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import com.example.demo.principal.PrincipalDetailsService;
+import com.example.demo.customUserDetail.CustomDetailsService;
+import com.example.demo.user.user;
+import com.example.demo.user.user_repository;
+import com.example.demo.user.user_service;
 
 import jakarta.servlet.http.HttpServletRequest;
 import java.security.Key;
@@ -23,6 +26,7 @@ import java.util.Date;
 import java.util.stream.Collectors;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.HashMap;
 
 @RequiredArgsConstructor
@@ -44,7 +48,8 @@ public class jwtProvider {
     private long exp;
 
     @Autowired
-    private PrincipalDetailsService principalDetailsService;
+    private CustomDetailsService principalDetailsService;
+
 
     @PostConstruct
     protected void init() {
@@ -54,7 +59,7 @@ public class jwtProvider {
     }
 
     // 토큰 생성
-    public String createToken(String name) {
+    public String createToken(String name, String role) {
         Map<String, Object> payloads = new HashMap<String, Object>();
         Map<String, Object> headers = new HashMap<>();
 
@@ -62,6 +67,7 @@ public class jwtProvider {
         headers.put("typ", "JWT");
 
         payloads.put("name", name);
+        payloads.put("role", role);
         // 토큰의 expire 시간을 설정
         long now = (new Date()).getTime();
         Date validity = new Date(now + this.exp);
@@ -96,13 +102,18 @@ public class jwtProvider {
         }
         return (String)Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody().get("name");
     }
-
-    // // Authorization Header를 통해 인증을 한다.
-    // public String resolveToken(HttpServletRequest request) {
-    //     return request.getHeader("Authorization");
-    // }
-    //cookie를 통해 진행하도록 수정
-
+    public String getRole(String token) {
+        try {
+            System.out.printf("jwt provider get role : ");
+            System.out.println(Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody().get("role"));
+        } catch (ExpiredJwtException e) {
+            e.printStackTrace();
+            return e.getClaims().getSubject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return (String)Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody().get("role");
+    }
     // 토큰 검증
     public boolean validateToken(String token) {
         try {
