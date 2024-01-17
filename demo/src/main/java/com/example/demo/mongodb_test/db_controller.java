@@ -71,7 +71,7 @@ public class db_controller {
     
     @RequestMapping(path = "/{id}/child", method = RequestMethod.POST)
     public String create_child(@PathVariable ObjectId id, @RequestParam String data, Model model) {
-        service.create_child(id, data);
+        service.create_child2(id, data);
         model.addAttribute("testList", service.all_data());
         test_db detail = service.get_data(id).get();
         model.addAttribute("detail", detail);
