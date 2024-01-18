@@ -41,7 +41,7 @@ public class mySQLController {
         sqlEntity detail = service.get_data(id).get();
         model.addAttribute("detail", detail);
         
-        //model.addAttribute("childList", detail.getChilds());
+        model.addAttribute("childList", detail.getChilds());
         return "db/mySQLdetail";
     }
 

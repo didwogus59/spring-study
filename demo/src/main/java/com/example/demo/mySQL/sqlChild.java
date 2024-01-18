@@ -23,7 +23,6 @@ public class sqlChild {
     private String data;
 
     @ManyToOne
-    @JoinColumn(name = "sqlEntity_id")
     private sqlEntity parent;
 
     sqlChild(sqlEntity entity, String data) {

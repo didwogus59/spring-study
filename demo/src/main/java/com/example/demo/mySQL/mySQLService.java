@@ -60,6 +60,8 @@ public class mySQLService {
         repoC.save(new sqlChild(entity.get(), data));
     }
 
-    public void getChilds(Long id) {
+    public List<sqlChild> getChilds(Long id) {
+        Optional<sqlEntity> entity = repo.findById(id);
+        return entity.get().getChilds();
     }
 }
