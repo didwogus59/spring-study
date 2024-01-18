@@ -30,5 +30,16 @@
     
     <p>-------------------------------------------</p> 
     <a href = "/">back home</a>
+
+    <p>-------------------------------------------</p> 
+    <form method = "POST" th:action = "@{/mysql/{id}/child(id=${detail.id})}">
+        <p>내용 : <input type="text" name = "data" value = "child"> </p>
+        <input type = "submit">
+    </form>
+    <p>-------------------------------------------</p> 
+    <tr th:each = "test : ${childList}">
+        <p th:text="${test.data}">
+        <p>-------------------------------------------</p>    
+    </tr>
 </body>
 </html> 

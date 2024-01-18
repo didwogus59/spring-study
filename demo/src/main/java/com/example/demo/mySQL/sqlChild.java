@@ -1,5 +1,6 @@
 package com.example.demo.mySQL;
 
+import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,19 +13,21 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class mySQLEntity {
+public class sqlChild {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private String title;
-
-    @Column
+    @Lob //대용량 데이터
     private String data;
 
-    mySQLEntity(String title, String data) {
-        this.title = title;
+    @ManyToOne
+    @JoinColumn(name = "sqlEntity_id")
+    private sqlEntity parent;
+
+    sqlChild(sqlEntity entity, String data) {
+        this.parent = entity;
         this.data = data;
     }
 }

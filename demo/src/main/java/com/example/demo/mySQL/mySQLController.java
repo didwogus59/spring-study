@@ -28,7 +28,7 @@ public class mySQLController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String create_data(@ModelAttribute mySQLEntity test, Model model) {
+    public String create_data(@ModelAttribute sqlEntity test, Model model) {
         service.create_data(test.getTitle(), test.getData());
         model.addAttribute("testList", service.all_data());
         return "db/mySQLBoard";
@@ -38,16 +38,17 @@ public class mySQLController {
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     public String detail_data(@PathVariable Long id, Model model) {
         
-        mySQLEntity detail = service.get_data(id).get();
+        sqlEntity detail = service.get_data(id).get();
         model.addAttribute("detail", detail);
-
+        
+        //model.addAttribute("childList", detail.getChilds());
         return "db/mySQLdetail";
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.POST)
-    public String update_data(@PathVariable Long id, @ModelAttribute mySQLEntity test, Model model) {
+    public String update_data(@PathVariable Long id, @ModelAttribute sqlEntity test, Model model) {
         
-        mySQLEntity detail = service.update_data(id, test.getTitle(),test.getData());
+        sqlEntity detail = service.update_data(id, test.getTitle(),test.getData());
         if(detail == null) {
             //check error later
             return "db/mySQLdetail";
@@ -61,5 +62,11 @@ public class mySQLController {
     public String delete_data(@PathVariable Long id, Model model) {
         service.delete_data(id);
         return "redirect:/mysql";
+    }
+
+    @RequestMapping(path = "/{id}/child", method = RequestMethod.POST)
+    public String create_child(@PathVariable Long id, @RequestParam String data) {
+        service.create_child(id, data);
+        return "redirect:/mysql/" + id;
     }
 }

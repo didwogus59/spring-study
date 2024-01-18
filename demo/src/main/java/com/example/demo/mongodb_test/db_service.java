@@ -65,7 +65,7 @@ public class db_service {
         repository.deleteById(id);
     }
 
-    public List<child> all_child(test_db parent) {
+    public List<mongoChild> all_child(test_db parent) {
         return parent.getChilds();
     }
 
@@ -75,10 +75,10 @@ public class db_service {
 
         if(tmp != null) {
             test_db test = tmp.get();
-            child tmpC = new child(data);
+            mongoChild tmpC = new mongoChild(data);
             repositoryC.save(tmpC);
             //test.getChilds().add(new child(data));
-            List<child> tmpL = test.getChilds();
+            List<mongoChild> tmpL = test.getChilds();
             tmpL.add(tmpC);
             test.setChilds(tmpL);
             repository.save(test);
@@ -89,7 +89,7 @@ public class db_service {
     public void create_child2(ObjectId parentId, String data) {
         Query query = Query.query(Criteria.where("_id").is(parentId));
         
-        child child = repositoryC.save(new child(data));
+        mongoChild child = repositoryC.save(new mongoChild(data));
 
         Update update = new Update().push("childs", child);
         

@@ -15,14 +15,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document("child")
-public class child {
+public class mongoChild {
     
     @Id
     private ObjectId id;
 
     private String data;
 
-    public child(String data) {
+    public mongoChild(String data) {
         this.data = data;
     }
 }

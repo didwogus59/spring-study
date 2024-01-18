@@ -26,11 +26,11 @@ public class test_db {
     private String data;
 
     @DBRef
-    List<child> childs;
+    List<mongoChild> childs;
 
     public test_db(String title, String data) {
         this.title = title;
         this.data = data;
-        this.childs = new ArrayList<child>();
+        this.childs = new ArrayList<mongoChild>();
     }
 }

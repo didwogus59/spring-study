@@ -45,7 +45,6 @@ public class db_controller {
         
         test_db detail = service.get_data(id).get();
         model.addAttribute("detail", detail);
-        model.addAttribute("childList", service.all_data());
         model.addAttribute("childList", detail.getChilds());
         return "db/mongoDBDetail";
     }
@@ -72,10 +71,6 @@ public class db_controller {
     @RequestMapping(path = "/{id}/child", method = RequestMethod.POST)
     public String create_child(@PathVariable ObjectId id, @RequestParam String data, Model model) {
         service.create_child2(id, data);
-        model.addAttribute("testList", service.all_data());
-        test_db detail = service.get_data(id).get();
-        model.addAttribute("detail", detail);
-        model.addAttribute("childList", detail.getChilds());
-        return "db/mongoDBDetail";
+        return "redirect:/mongoDB/"+id;
     }
 }

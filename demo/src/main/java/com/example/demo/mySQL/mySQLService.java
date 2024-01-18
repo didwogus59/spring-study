@@ -16,19 +16,23 @@ public class mySQLService {
     @Autowired
     private final mySQLRepository repo;
 
-    public void create_data(String title, String data) {
-        repo.save(new mySQLEntity(title, data));
+    @Autowired
+    private final sqlChildRepository repoC;
+
+    public sqlEntity create_data(String title, String data) {
+        sqlEntity entity = repo.save(new sqlEntity(title, data));
+        return entity;
     }
 
-    public List<mySQLEntity> all_data() {
+    public List<sqlEntity> all_data() {
         return repo.findAll();
     }
 
-    public mySQLEntity update_data(Long id, String title, String data) {
-        Optional<mySQLEntity> tmp = repo.findById(id);
+    public sqlEntity update_data(Long id, String title, String data) {
+        Optional<sqlEntity> tmp = repo.findById(id);
         
         if(tmp != null) {
-            mySQLEntity test = tmp.get();
+            sqlEntity test = tmp.get();
             if(title != null) {
                 test.setTitle(title);
             }
@@ -47,7 +51,15 @@ public class mySQLService {
         repo.deleteById(id);
     }
 
-    public Optional<mySQLEntity> get_data(Long id) {
+    public Optional<sqlEntity> get_data(Long id) {
         return repo.findById(id);
+    }
+
+    public void create_child(Long id, String data) {
+        Optional<sqlEntity> entity = repo.findById(id);
+        repoC.save(new sqlChild(entity.get(), data));
+    }
+
+    public void getChilds(Long id) {
     }
 }
