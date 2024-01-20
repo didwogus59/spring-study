@@ -77,7 +77,6 @@ public class db_service {
             test_db test = tmp.get();
             mongoChild tmpC = new mongoChild(data);
             repositoryC.save(tmpC);
-            //test.getChilds().add(new child(data));
             List<mongoChild> tmpL = test.getChilds();
             tmpL.add(tmpC);
             test.setChilds(tmpL);
@@ -98,5 +97,10 @@ public class db_service {
         if(update_test == null) {
             System.out.println("no test_db error");
         }
+    }
+
+    public void delete_child(ObjectId childId) {
+        
+        repositoryC.deleteById(childId);
     }
 }

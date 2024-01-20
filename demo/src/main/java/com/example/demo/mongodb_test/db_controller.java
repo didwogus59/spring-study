@@ -73,4 +73,5 @@ public class db_controller {
         service.create_child2(id, data);
         return "redirect:/mongoDB/"+id;
     }
+
 }
