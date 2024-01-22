@@ -103,9 +103,8 @@ public class db_service {
 
     public void delete_child(ObjectId parentId, ObjectId childId) {
         Query query = Query.query(Criteria.where("_id").is(parentId));
-        Update update = new Update();
-        update.unset("childs");
-        mongoTemplate.updateMulti(query, update, Transaction.class, "test");
+        Update update = new Update().pull("childs", childId);
+        mongoTemplate.updateFirst(query, update, Transaction.class, "test");
         if(childId != null)
             repositoryC.deleteById(childId);
     }

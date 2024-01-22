@@ -19,6 +19,8 @@ public class db_serviceTest {
     void testDelete_child() {
         test_db test = repo.save(new test_db("test", "data"));
         mongoChild child = service.create_child2(test.getId(), "child");
+        service.create_child2(test.getId(), "chil23");
+        service.create_child2(test.getId(), "asgasg23");
         service.delete_child(test.getId(), child.getId());
     }
 }
