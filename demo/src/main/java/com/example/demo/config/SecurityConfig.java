@@ -66,6 +66,8 @@ public class SecurityConfig {
         http.csrf((csrf) -> csrf
             .ignoringRequestMatchers(new AntPathRequestMatcher("/form/**")));
 
+        // http.csrf((csrf) -> csrf.disable());
+
         http.headers((headers) -> headers
             .addHeaderWriter(new XFrameOptionsHeaderWriter(
                 XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)));

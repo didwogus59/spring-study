@@ -69,4 +69,9 @@ public class mySQLController {
         service.create_child(id, data);
         return "redirect:/mysql/" + id;
     }
-}
+
+    @RequestMapping(path = "/{id}/child/delete/{child_id}", method = RequestMethod.POST)
+    public String delete_child(@PathVariable Long id,@PathVariable Long child_id, @RequestParam String data) {
+        service.delete_child(child_id);
+        return "redirect:/mysql/" + id;
+    }}

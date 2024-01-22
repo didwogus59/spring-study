@@ -73,5 +73,11 @@ public class db_controller {
         service.create_child2(id, data);
         return "redirect:/mongoDB/"+id;
     }
-
+    
+    //
+    @RequestMapping(path = "/{id}/child/{child_id}/delete", method = RequestMethod.POST)
+    public String delete_child(@PathVariable ObjectId id,@PathVariable ObjectId child_id, Model model) {
+        service.delete_child(id, child_id);
+        return "redirect:/mongoDB/"+id;
+    }
 }

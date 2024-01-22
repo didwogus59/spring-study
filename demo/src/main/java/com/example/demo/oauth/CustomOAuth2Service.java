@@ -13,7 +13,6 @@ import com.example.demo.customUserDetail.CustomDetail;
 import com.example.demo.user.user;
 import com.example.demo.user.user_repository;
 
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -49,6 +48,4 @@ public class CustomOAuth2Service implements OAuth2UserService<OAuth2UserRequest,
         }
         return new CustomDetail(user);
     }
-
-    
 }

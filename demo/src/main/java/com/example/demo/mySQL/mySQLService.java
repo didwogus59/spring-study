@@ -64,4 +64,16 @@ public class mySQLService {
         Optional<sqlEntity> entity = repo.findById(id);
         return entity.get().getChilds();
     }
+
+    public sqlChild update_child(Long id, String data) {
+        Optional<sqlChild> tmp = repoC.findById(id);
+        sqlChild child = tmp.get();
+        child.setData(data);
+        return repoC.save(child);
+    }
+
+    public void delete_child(Long child_id) {
+        if(child_id != null)
+            repoC.deleteById(child_id);
+    }
 }

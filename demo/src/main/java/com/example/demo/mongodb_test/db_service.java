@@ -8,6 +8,7 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jakarta.transaction.Transaction;
 
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -85,22 +86,27 @@ public class db_service {
     }
 
     //query를 따로 지정하여 만든 update 속도가 빠르다
-    public void create_child2(ObjectId parentId, String data) {
+    public mongoChild create_child2(ObjectId parentId, String data) {
         Query query = Query.query(Criteria.where("_id").is(parentId));
         
         mongoChild child = repositoryC.save(new mongoChild(data));
 
         Update update = new Update().push("childs", child);
         
-        test_db update_test = mongoTemplate.findAndModify(query, update, test_db.class);
+        test_db update_test = mongoTemplate.findAndModify(query, update, test_db.class, "test");
 
         if(update_test == null) {
             System.out.println("no test_db error");
         }
+        return child;
     }
 
-    public void delete_child(ObjectId childId) {
-        
-        repositoryC.deleteById(childId);
+    public void delete_child(ObjectId parentId, ObjectId childId) {
+        Query query = Query.query(Criteria.where("_id").is(parentId));
+        Update update = new Update();
+        update.unset("childs");
+        mongoTemplate.updateMulti(query, update, Transaction.class, "test");
+        if(childId != null)
+            repositoryC.deleteById(childId);
     }
 }
