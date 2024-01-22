@@ -37,8 +37,8 @@ public class homeController {
         }
         model.addAttribute("name", name);
         if(auth != null) {
-            System.out.printf("auth : ");
-            System.out.println(auth);
+            // System.out.printf("auth : ");
+            // System.out.println(auth);
             model.addAttribute("type", "session");
             model.addAttribute("name", auth.getName()); 
         }

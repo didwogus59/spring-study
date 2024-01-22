@@ -10,11 +10,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
+@Builder
 @Document(collection = "user")
 @Data
 @Setter
@@ -51,4 +52,5 @@ public class user {
         this.email = "noEmail";
         this.role = "user";
     }
+    
 }

@@ -50,12 +50,12 @@ public class customAuthenticationFilter extends UsernamePasswordAuthenticationFi
 	@Override
 	protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse res, FilterChain chain, Authentication authResult) throws IOException, ServletException {
 		System.out.println("auth result : " + authResult);
-		System.out.println("auth result principal: " + authResult.getPrincipal());
-		System.out.println("auth result credential: " + authResult.getCredentials());
-		System.out.println("auth result name: " + authResult.getName());
-		//Iterator<GrantedAuthority> iterator = authResult.getAuthorities();
-		System.out.println("auth result authority: " + authResult.getAuthorities());
-		System.out.println("auth result detail: " + authResult.getDetails());
+		// System.out.println("auth result principal: " + authResult.getPrincipal());
+		// System.out.println("auth result credential: " + authResult.getCredentials());
+		// System.out.println("auth result name: " + authResult.getName());
+		// //Iterator<GrantedAuthority> iterator = authResult.getAuthorities();
+		// System.out.println("auth result authority: " + authResult.getAuthorities());
+		// System.out.println("auth result detail: " + authResult.getDetails());
         SecurityContextHolder.getContext().setAuthentication(authResult);
 		//res.sendRedirect("/");
 		chain.doFilter(req,res);
