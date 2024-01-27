@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.user;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -28,7 +28,7 @@ public class customAuthenticationFilter extends UsernamePasswordAuthenticationFi
 	
     @Override
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException{
-        System.out.println("custom authenticationFilter : 진입");
+        System.out.printf("custom authenticationFilter : 진입\n");
 		
 		String name = null;
 		String password = null;

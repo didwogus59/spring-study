@@ -1,10 +1,8 @@
-package com.example.demo.config;
+package com.example.demo.jwt;
 
 import java.io.IOException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
-
-import com.example.demo.jwt.jwtProvider;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

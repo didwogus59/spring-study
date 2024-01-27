@@ -1,5 +1,5 @@
 //not used
-package com.example.demo.config;
+package com.example.demo.jwt;
 
 import java.io.IOException;
 
@@ -11,7 +11,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.example.demo.customUserDetail.CustomDetail;
 import com.example.demo.home.homeController;
-import com.example.demo.jwt.jwtProvider;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.jsonwebtoken.Jwt;

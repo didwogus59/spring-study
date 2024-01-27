@@ -20,6 +20,7 @@ import com.example.demo.customUserDetail.CustomDetail;
 import com.example.demo.jwt.jwtProvider;
 import com.example.demo.user.user;
 
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -31,6 +32,15 @@ public class homeController {
     
     @GetMapping("/")
 	public String home(Model model, HttpServletRequest req, Authentication auth) {
+        Cookie[] cookies = req.getCookies();
+        if(cookies != null) {
+            for(Cookie c : cookies) {
+                if(c.getName().equals("JSESSIONID")) {
+                    System.out.println(c.getValue());
+                    break;
+                }
+            }
+        }
         String name = (String)req.getAttribute("name");
         if(name != null) {
             model.addAttribute("type", "jwt");

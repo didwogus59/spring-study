@@ -18,8 +18,11 @@ import org.springframework.security.web.header.writers.frameoptions.XFrameOption
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.example.demo.customUserDetail.CustomDetailsService;
+import com.example.demo.jwt.jwtAuthenticationFilter;
+import com.example.demo.jwt.jwtAuthorizationFilter;
 import com.example.demo.jwt.jwtProvider;
 import com.example.demo.oauth.CustomOAuth2Service;
+import com.example.demo.user.customAuthenticationFilter;
 import com.example.demo.user.user_repository;
 
 import lombok.RequiredArgsConstructor;
