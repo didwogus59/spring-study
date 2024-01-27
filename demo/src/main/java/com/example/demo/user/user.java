@@ -1,5 +1,7 @@
 package com.example.demo.user;
 
+import java.io.Serializable;
+
 import org.bson.types.ObjectId;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.Id;
@@ -21,7 +23,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class user {
+public class user implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

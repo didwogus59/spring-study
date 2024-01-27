@@ -3,33 +3,29 @@ package com.example.demo.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.example.demo.customUserDetail.CustomDetailsService;
 import com.example.demo.jwt.jwtAuthenticationFilter;
 import com.example.demo.jwt.jwtAuthorizationFilter;
 import com.example.demo.jwt.jwtProvider;
 import com.example.demo.oauth.CustomOAuth2Service;
+import com.example.demo.redis.redis_repository;
 import com.example.demo.user.customAuthenticationFilter;
-import com.example.demo.user.user_repository;
 
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 
 @Configuration
 @EnableWebSecurity
@@ -44,6 +40,9 @@ public class SecurityConfig {
     
     @Autowired
     private final jwtProvider tokenProvider;
+
+    @Autowired
+    redis_repository repoR;
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -110,9 +109,10 @@ public class SecurityConfig {
 		@Override
 		public void configure(HttpSecurity http) throws Exception {
 			AuthenticationManager authenticationManager = http.getSharedObject(AuthenticationManager.class);
-            customAuthenticationFilter filter = new customAuthenticationFilter(authenticationManager);
+            customAuthenticationFilter filter = new customAuthenticationFilter(authenticationManager, repoR);
             filter.setFilterProcessesUrl("/user/login/session/auth");
-            http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
+            http.
+            addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
 		}
 	}
 }

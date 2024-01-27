@@ -32,15 +32,7 @@ public class homeController {
     
     @GetMapping("/")
 	public String home(Model model, HttpServletRequest req, Authentication auth) {
-        Cookie[] cookies = req.getCookies();
-        if(cookies != null) {
-            for(Cookie c : cookies) {
-                if(c.getName().equals("JSESSIONID")) {
-                    System.out.println(c.getValue());
-                    break;
-                }
-            }
-        }
+        
         String name = (String)req.getAttribute("name");
         if(name != null) {
             model.addAttribute("type", "jwt");
