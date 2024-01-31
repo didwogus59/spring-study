@@ -48,11 +48,10 @@ public class homeController {
 		return "home";
 	}
 
-    @GetMapping("/json")
+    @GetMapping("/json123")
     public String json(@RequestBody test test, Model model) {
         model.addAttribute("test", test);
         
         return "json";
     }
-    
 }

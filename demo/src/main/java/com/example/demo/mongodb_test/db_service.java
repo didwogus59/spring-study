@@ -8,6 +8,8 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.test;
+
 import jakarta.transaction.Transaction;
 
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -30,8 +32,18 @@ public class db_service {
         return repository.findAll();
     }
 
+
+    public List<test_db> all_data2() {
+        return mongoTemplate.findAll(test_db.class);
+    }
+
     public Optional<test_db> get_data(ObjectId id) {
         return repository.findById(id);
+    }
+
+    public List<test_db> get_data2(ObjectId id) {
+        Query query = Query.query(Criteria.where("_id").is(id));
+        return mongoTemplate.find(query, test_db.class);
     }
 
     public test_db create_data(String title, String data) {
@@ -43,6 +55,13 @@ public class db_service {
         repository.save(test);
         return test; 
     }
+
+    
+    public test_db create_data3(String title, String data) {
+        test_db test = new test_db(title, data);
+        return mongoTemplate.insert(test); 
+    }
+
     public test_db update_data(ObjectId id, String title, String data) {
         Optional<test_db> tmp = repository.findById(id);
         
@@ -61,6 +80,13 @@ public class db_service {
         return null;
         
     }
+
+    public void update_data2(ObjectId id, String title, String data) {
+        Query query = Query.query(Criteria.where("_id").is(id));
+        Update update = new Update().update("title", title).update("data", data);
+        mongoTemplate.updateFirst(query, update, test_db.class);
+    }
+
 
     public void delete_data(ObjectId id) {
         repository.deleteById(id);

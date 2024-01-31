@@ -22,7 +22,7 @@ public class mySQLController {
     mySQLService service;
     
     @GetMapping()
-    public String requestMethodName(Model model) {
+    public String all_data(Model model) {
         model.addAttribute("testList", service.all_data());
         return "db/mySQLBoard";
     }
@@ -40,8 +40,8 @@ public class mySQLController {
         
         sqlEntity detail = service.get_data(id).get();
         model.addAttribute("detail", detail);
-        
-        model.addAttribute("childList", detail.getChilds());
+        System.out.println(detail.getChilds().get(1).getData());
+        model.addAttribute("childList", null);
         return "db/mySQLdetail";
     }
 

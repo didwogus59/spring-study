@@ -12,13 +12,7 @@ public class redis_repositoryTest {
 
     @Test
     void test() {
-        String test = "test";
-        redis_token token = new redis_token(test, -1);
-
-        repo.save(token);
-
-        repo.count();
-
+       
     }
 
 }

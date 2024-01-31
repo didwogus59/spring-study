@@ -14,6 +14,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(schema = "sql_entity")
 public class sqlEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

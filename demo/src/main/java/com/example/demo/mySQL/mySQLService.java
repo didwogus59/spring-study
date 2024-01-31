@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,6 +19,9 @@ public class mySQLService {
 
     @Autowired
     private final sqlChildRepository repoC;
+
+    @Autowired
+    private JdbcTemplate template;
 
     public sqlEntity create_data(String title, String data) {
         sqlEntity entity = repo.save(new sqlEntity(title, data));
@@ -59,7 +63,7 @@ public class mySQLService {
         Optional<sqlEntity> entity = repo.findById(id);
         repoC.save(new sqlChild(entity.get(), data));
     }
-
+    @Transactional
     public List<sqlChild> getChilds(Long id) {
         Optional<sqlEntity> entity = repo.findById(id);
         return entity.get().getChilds();

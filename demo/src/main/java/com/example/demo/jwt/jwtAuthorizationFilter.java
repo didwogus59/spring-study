@@ -23,9 +23,11 @@ public class jwtAuthorizationFilter extends BasicAuthenticationFilter{
         req.setAttribute("name", null);
         Cookie[] cookies = req.getCookies();
         String token = null;
-        for(Cookie cookie: cookies) {
-            if(cookie.getName().equals("jwt"))
-                token = cookie.getValue();
+        if(cookies != null) {
+            for(Cookie cookie: cookies) {
+                if(cookie.getName().equals("jwt"))
+                    token = cookie.getValue();
+            }
         }
         System.out.printf("authorization jwt: %s\n",token);
         if(token == null || jwtProvider.validateToken(token)) {

@@ -20,7 +20,6 @@ public class redis_config {
 
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
-        System.out.printf("%s", host);
         return new LettuceConnectionFactory(host, port);
     }
 }

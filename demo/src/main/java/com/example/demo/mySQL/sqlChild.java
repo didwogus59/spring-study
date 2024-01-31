@@ -13,6 +13,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(schema ="sql_child")
 public class sqlChild {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +26,7 @@ public class sqlChild {
     @ManyToOne
     private sqlEntity parent;
 
-    sqlChild(sqlEntity entity, String data) {
+    public sqlChild(sqlEntity entity, String data) {
         this.parent = entity;
         this.data = data;
     }
