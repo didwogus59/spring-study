@@ -26,7 +26,7 @@ public class sqlEntity {
     @Column
     private String data;
 
-    @OneToMany(mappedBy = "parent", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "parent", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<sqlChild> childs = new ArrayList<>();
 
     sqlEntity(String title, String data) {
