@@ -27,10 +27,16 @@ public class imageController {
 
     @PostMapping("/upload")
     public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) {
-        service.saveImage(file);
-        return ResponseEntity.ok("Image uploaded successfully");
+        if(service.saveImage(file))
+            return ResponseEntity.ok("Image uploaded successfully");
+        return ResponseEntity.ok("Image uploaded failed");
     }
-
+    @GetMapping("/list")
+    public String listImage(Model model) {
+        model.addAttribute("list", service.imageList());
+        return "file/image_list";
+    }
+    
     @GetMapping("/show/{id}")
     public String showImage(@PathVariable Long id, Model model) {
         
