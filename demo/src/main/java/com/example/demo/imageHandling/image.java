@@ -1,4 +1,4 @@
-package com.example.demo.imageHandling.entity;
+package com.example.demo.imageHandling;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

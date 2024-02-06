@@ -1,4 +1,4 @@
-package com.example.demo.chatting;
+package com.example.demo.webSocket;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;

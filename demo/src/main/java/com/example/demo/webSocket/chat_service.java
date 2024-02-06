@@ -1,4 +1,4 @@
-package com.example.demo.chatting;
+package com.example.demo.webSocket;
 
 public class chat_service {
     

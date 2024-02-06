@@ -1,4 +1,4 @@
-package com.example.demo.other_server;
+package com.example.demo.rest_api;
 
 import lombok.Getter;
 import lombok.Setter;

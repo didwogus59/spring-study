@@ -24,7 +24,7 @@ public class CustomOAuth2Service implements OAuth2UserService<OAuth2UserRequest,
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         System.out.println("userRequest : " + userRequest);
-        // System.out.println("access token : " + userRequest.getAccessToken());
+        System.out.println("access token : " + userRequest.getAccessToken());
         System.out.println("client Registration : " + userRequest.getClientRegistration());
         OAuth2UserService<OAuth2UserRequest, OAuth2User> delegate = new DefaultOAuth2UserService();
         System.out.println("user : " + delegate.loadUser(userRequest));
@@ -41,6 +41,7 @@ public class CustomOAuth2Service implements OAuth2UserService<OAuth2UserRequest,
             user.setProviderId(info.getProviderId());
             user.setName(info.getName());
             user.setEmail(info.getEmail());
+            user.setRole("ROLE_USER");
             repo.save(user);
         }
         else {

@@ -1,4 +1,4 @@
-package com.example.demo.other_server;
+package com.example.demo.rest_api;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;

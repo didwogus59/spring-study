@@ -45,14 +45,14 @@ public class user implements Serializable{
         this.name = name;
         this.password = password;
         this.email = email;
-        this.role = "user";
+        this.role = "ROLE_USER";
     }
 
     user(String name, String password) {
         this.name = name;
         this.password = password;
         this.email = "noEmail";
-        this.role = "user";
+        this.role = "ROLE_USER";
     }
     
 }

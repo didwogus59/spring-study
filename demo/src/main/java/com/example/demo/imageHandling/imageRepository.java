@@ -1,6 +1,4 @@
-package com.example.demo.imageHandling.repository;
-
-import com.example.demo.imageHandling.entity.image;
+package com.example.demo.imageHandling;
 
 import java.util.List;
 

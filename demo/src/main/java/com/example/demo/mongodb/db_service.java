@@ -1,4 +1,4 @@
-package com.example.demo.mongodb_test;
+package com.example.demo.mongodb;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,11 +82,13 @@ public class db_service {
     }
 
     public void update_data2(ObjectId id, String title, String data) {
+        //특정 컬렉션에 대한 쿼리 작성
         Query query = Query.query(Criteria.where("_id").is(id));
+        //update할 필드와 값 설정
         Update update = new Update().update("title", title).update("data", data);
+        //update 실행
         mongoTemplate.updateFirst(query, update, test_db.class);
     }
-
 
     public void delete_data(ObjectId id) {
         repository.deleteById(id);

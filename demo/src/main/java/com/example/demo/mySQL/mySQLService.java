@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,7 +21,7 @@ public class mySQLService {
     @Autowired
     private final sqlChildRepository repoC;
 
-    @Autowired
+    @Qualifier("myTemplate")
     private JdbcTemplate template;
 
     public sqlEntity create_data(String title, String data) {

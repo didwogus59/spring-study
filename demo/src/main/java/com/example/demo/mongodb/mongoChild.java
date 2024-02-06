@@ -1,4 +1,4 @@
-package com.example.demo.mongodb_test;
+package com.example.demo.mongodb;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;

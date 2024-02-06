@@ -13,11 +13,10 @@ import com.example.demo.user.user;
 public class CustomDetail implements UserDetails, OAuth2User{
 
     private user user = null;
-    private static final long serialVersionUID = 1L;
+    //private static final long serialVersionUID = 1L;
 	private Map<String, Object> attributes;
 
     public CustomDetail(user user) {
-        System.out.println("custom detail make");
         this.user = user;
     }
 
@@ -29,13 +28,15 @@ public class CustomDetail implements UserDetails, OAuth2User{
     // 권한 관련 작업을 하기 위한 role return
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        Collection<GrantedAuthority> collections = new ArrayList<>();
-        collections.add(() -> {
-            return user.getRole();
-        });
-
-        return collections;
-    }
+        Collection<GrantedAuthority> collect = new ArrayList<>();
+        collect.add(new GrantedAuthority() {
+            @Override
+            public String getAuthority() {
+                return user.getRole();
+            }
+    });
+    return collect;
+}
     public boolean isUser() {
         if(user == null)
             return false;

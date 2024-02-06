@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.example.demo.imageHandling.repository.imageRepository;
 import com.example.demo.mySQL.mySQLService;
 
 @SpringBootTest

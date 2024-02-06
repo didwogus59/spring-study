@@ -2,12 +2,13 @@ package com.example.demo.mySQL;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -70,5 +71,11 @@ public class mySQLConfig {
         JpaTransactionManager manager = new JpaTransactionManager();
         manager.setEntityManagerFactory(mySQLManagerFactory().getObject());
         return manager;
+    }
+
+    @Qualifier("myTemplate")
+    @Bean
+    public JdbcTemplate myTemplate() {
+        return new JdbcTemplate(mySQLSource());
     }
 }

@@ -2,6 +2,7 @@ package com.example.demo.user;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -27,6 +28,7 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 
@@ -40,14 +42,17 @@ public class user_controller {
 
     @Autowired
     jwtProvider jwtProvider;
+    
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+    @RequestMapping(path = "/user", method = RequestMethod.GET)
+    public @ResponseBody String check_login() {
+        return "you are user";
+    }
 
-    private final  AuthenticationManagerBuilder authenticationManagerBuilder;
-
-
-    @RequestMapping(path = "/data", method = RequestMethod.GET)
-    public String user_data(Model model) {
-        model.addAttribute("user", new user());
-        return "user/data";
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @RequestMapping(path = "/admin", method = RequestMethod.GET)
+    public @ResponseBody String check_admin() {
+        return "you are admin";
     }
 
 
@@ -102,7 +107,6 @@ public class user_controller {
         try {
             req.logout();
         } catch (ServletException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return "redirect:/";

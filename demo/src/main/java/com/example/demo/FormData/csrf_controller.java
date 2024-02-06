@@ -1,4 +1,4 @@
-package com.example.demo.form_test;
+package com.example.demo.FormData;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

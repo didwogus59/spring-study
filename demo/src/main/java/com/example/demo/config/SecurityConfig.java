@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -30,6 +31,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
+@EnableMethodSecurity(
+    prePostEnabled = true, 
+    securedEnabled = true, 
+    jsr250Enabled = true)
 public class SecurityConfig {
 
     @Autowired
@@ -47,10 +52,13 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         //http.addFilterBefore(new myfilter1(),  BasicAuthenticationFilter.class);
-        http.authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
-            .requestMatchers(new AntPathRequestMatcher("/user/data"))
-            .hasRole("User")
-            .anyRequest().permitAll());
+        
+        // http.authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
+        //     .requestMatchers(new AntPathRequestMatcher("/user/data"))
+        //     .hasRole("User")
+        //     .requestMatchers(new AntPathRequestMatcher("/user/admin"))
+        //     .hasRole("Admin")
+        //     .anyRequest().permitAll());
       
         http.httpBasic((basic) -> basic.disable());
 

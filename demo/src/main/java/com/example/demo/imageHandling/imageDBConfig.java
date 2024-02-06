@@ -19,7 +19,7 @@ import java.util.*;
 
 @Configuration
 @EnableJpaRepositories(
-    basePackages = "com.example.demo.imageHandling.repository",
+    basePackages = "com.example.demo.imageHandling",
     entityManagerFactoryRef = "imageManagerFactory",
     transactionManagerRef = "imageTransactionManager"
 )
@@ -52,7 +52,7 @@ public class imageDBConfig {
     public LocalContainerEntityManagerFactoryBean imageManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(imageSource());
-        em.setPackagesToScan(new String[] {"com.example.demo.imageHandling.entity"});
+        em.setPackagesToScan(new String[] {"com.example.demo.imageHandling"});
 
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         // adapter.setShowSql(false);

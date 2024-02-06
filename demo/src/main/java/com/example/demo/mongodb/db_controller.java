@@ -1,4 +1,4 @@
-package com.example.demo.mongodb_test;
+package com.example.demo.mongodb;
 
 import java.util.ArrayList;
 import java.util.List;

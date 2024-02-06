@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 
 import com.example.demo.customUserDetail.CustomDetail;
 import com.example.demo.jwt.jwtProvider;
-import com.example.demo.mongodb_test.db_repository;
-import com.example.demo.mongodb_test.test_db;
+import com.example.demo.mongodb.db_repository;
+import com.example.demo.mongodb.test_db;
 import com.example.demo.redis.redis_repository;
 import com.example.demo.redis.redis_token;
 
@@ -65,6 +65,12 @@ public class customAuthenticationFilter extends UsernamePasswordAuthenticationFi
 	protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse res, FilterChain chain, Authentication authResult) throws IOException, ServletException {
 		SecurityContextHolder.getContext().setAuthentication(authResult);	
 		chain.doFilter(req,res);
+		System.out.println("auth result principal: " + authResult.getPrincipal());
+		System.out.println("auth result credential: " + authResult.getCredentials());
+		System.out.println("auth result name: " + authResult.getName());
+		//Iterator<GrantedAuthority> iterator = authResult.getAuthorities();
+		System.out.println("auth result authority: " + authResult.getAuthorities());
+		System.out.println("auth result detail: " + authResult.getDetails());
 	}
 }
 
