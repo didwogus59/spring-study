@@ -1,5 +1,6 @@
 package com.example.demo.oauth;
 
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -26,14 +27,25 @@ public class CustomOAuth2Service implements OAuth2UserService<OAuth2UserRequest,
         System.out.println("userRequest : " + userRequest);
         System.out.println("access token : " + userRequest.getAccessToken());
         System.out.println("client Registration : " + userRequest.getClientRegistration());
+        return processOauth2User(userRequest);
+    }
+
+    private OAuth2User processOauth2User(OAuth2UserRequest userRequest) {
         OAuth2UserService<OAuth2UserRequest, OAuth2User> delegate = new DefaultOAuth2UserService();
-        System.out.println("user : " + delegate.loadUser(userRequest));
-        oauth2Info info = new googleInfo(delegate.loadUser(userRequest).getAttributes());
+        oauth2Info info = null;
+        String registration = userRequest.getClientRegistration().getRegistrationId();
+        if(registration.equals("google")) {
+
+            info = new googleInfo(delegate.loadUser(userRequest).getAttributes());
+        }
+        else if(registration.equals("naver")) {
+            info = new naverInfo((Map)delegate.loadUser(userRequest).getAttributes().get("response"));
+        }
+        else {
+            System.out.printf("please login by google or naver\n");
+        }
 
         Optional<user> userOp = repo.findOneByProviderIdAndProvider(info.getProviderId(), info.getProvider());
-        if(info.getProvider().equals("google")) {
-            System.out.println("google login");
-        }
         user user;
         if(!userOp.isPresent()) {
             user = new user();
@@ -45,6 +57,7 @@ public class CustomOAuth2Service implements OAuth2UserService<OAuth2UserRequest,
             repo.save(user);
         }
         else {
+            System.out.printf("user is exist\n");
             user = userOp.get();
         }
         return new CustomDetail(user);
