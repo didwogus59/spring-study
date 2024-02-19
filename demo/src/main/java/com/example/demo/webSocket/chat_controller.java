@@ -14,7 +14,7 @@ public class chat_controller {
   }
 
   @MessageMapping("/new_msg")
-  @SendTo("/broker/chatting")
+  @SendTo("/sub/chatting")
   public chat new_msg(chat msg) throws Exception {
     System.out.println(msg.getData());
     msg.setData(": " + msg.getData());
@@ -22,7 +22,7 @@ public class chat_controller {
   }
 
   @MessageMapping("/new_user")
-  @SendTo("/broker/chatting")
+  @SendTo("/sub/chatting")
   public chat new_user(chat msg) throws Exception {
     System.out.println(msg.getName());
     return new chat(msg.getName(), " is come!");

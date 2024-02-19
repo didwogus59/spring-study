@@ -17,19 +17,19 @@ public class elasticServiceTest {
     
     @Test
     void testTestSave() {
-        service.save_data2(new my_entity("test2", "hello?"));
+        service.save_data2(new my_entity("test3", "hello?"));
     }
 
     @Test
     void testget() {
-        String id = "test2";
+        String id = "test3";
         String name = service.get_data(id).getName();
         assertEquals("hello?", name);
     }
 
     @Test
     void testget2() {
-        String id = "test2";
+        String id = "test3";
         String name = service.get_data2(id).getName();
         assertEquals("hello?", name);
     }

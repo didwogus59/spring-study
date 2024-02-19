@@ -1,11 +1,11 @@
 const stompClient = new StompJs.Client({
-    brokerURL: 'ws://localhost:5000/endpoint'
+    brokerURL: 'wss://localhost:5000/endpoint'
 });
 
 stompClient.onConnect = (frame) => {
     setConnected(true);
     console.log('Connected: ' + frame);
-    stompClient.subscribe('/broker/greeting', (test) => {
+    stompClient.subscribe('/sub/greeting', (test) => {
         showGreeting(JSON.parse(test.body).title, JSON.parse(test.body).data);
     });
 };
@@ -43,7 +43,7 @@ function disconnect() {
 
 function sendName() {
     stompClient.publish({
-        destination: "/des/testMsg",
+        destination: "/pub/testMsg",
         body: JSON.stringify({'data': $("#name").val()})
     });
 }

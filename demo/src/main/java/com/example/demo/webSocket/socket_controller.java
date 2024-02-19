@@ -22,15 +22,18 @@ public class socket_controller {
     return "chatting/test";
   }
 
-  @MessageMapping("/testM")
-  @SendTo("/broker/testB")
-  public test test_socket(test msg) throws Exception {
+  
+
+  @SendTo("/sub/test1")
+  @MessageMapping("/test1")
+  public String test_socket(test msg) throws Exception {
     System.out.println(msg.getData());
-    return new test("hello", msg.getData());
+    return msg.getData() + " from server";
   }
 
+
+  @SendTo("/sub/greeting")
   @MessageMapping("/testMsg")
-  @SendTo("/broker/greeting")
   public test greeting(test msg) throws Exception {
     Thread.sleep(1000); // simulated delay
     System.out.println(msg.getData());

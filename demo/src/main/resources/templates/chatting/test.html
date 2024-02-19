@@ -8,30 +8,31 @@
 </head>
 
 <body>
-  <input type="text" id="username" placeholder="Username">
+  <input type="text" id="username" placeholder="Username"><br>
+  <input type="text" id="fromS" placeholder="From Server"><br>
   <button id="join-btn">JOIN</button>
   <script>
     const stompClient = new StompJs.Client({
-      brokerURL: 'ws://localhost:5000/endpoint'
+      brokerURL: 'wss://localhost:5000/endpoint'
     });
     console.log("1");
     stompClient.onConnect = (frame) => {
       console.log('Connected: ' + frame);
       console.log("2")
-      stompClient.subscribe('/broker/testB', (test) => {
-        console.log("3");
-        document.getElementById("username").value += " sent from server";
+      stompClient.subscribe('/sub/test1', (test) => {
+        console.log("subscribe");
+        document.getElementById("fromS").value = test.body;
       });
     }
     
     stompClient.activate();
-    
+    console.log("3")
     document.getElementById("join-btn").addEventListener("click", function () {
       console.log("4")
       let username = document.getElementById("username").value;
       console.log(username);
       stompClient.publish({
-        destination: "/des/testM",
+        destination: "/pub/test1",
         body: JSON.stringify({'data': username})
       });
       console.log("5")
