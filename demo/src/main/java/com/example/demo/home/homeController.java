@@ -54,4 +54,10 @@ public class homeController {
         
         return "json";
     }
+
+    @GetMapping("/cors")
+    public String getMethodName() {
+        return "cors_test";
+    }
+    
 }

@@ -38,9 +38,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig {
 
     @Autowired
-    private CorsConfig corsConfig;
-    
-    @Autowired
     private CustomOAuth2Service customoAuth2Service;
     
     @Autowired
@@ -59,12 +56,10 @@ public class SecurityConfig {
         //     .requestMatchers(new AntPathRequestMatcher("/user/admin"))
         //     .hasRole("Admin")
         //     .anyRequest().permitAll());
-      
+        
         http.httpBasic((basic) -> basic.disable());
-
         http.apply(new jwtDsl(tokenProvider));
         http.apply(new sessionDsl());
-
         http.logout((logout) -> logout
             .logoutUrl("/user/logout/session")
             .logoutSuccessUrl("/"));
@@ -77,7 +72,7 @@ public class SecurityConfig {
             .ignoringRequestMatchers(new AntPathRequestMatcher("/form/**")));
 
         // http.csrf((csrf) -> csrf.disable());
-
+        
         http.headers((headers) -> headers
             .addHeaderWriter(new XFrameOptionsHeaderWriter(
                 XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)));

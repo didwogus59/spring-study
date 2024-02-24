@@ -1,6 +1,8 @@
 package com.example.demo.imageHandling;
 
+import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +42,19 @@ public class imageController {
         String base64Image = Base64.getEncoder().encodeToString(tmp.getData());
         model.addAttribute("image", base64Image);
         return "file/display";
+    }
+
+    @GetMapping("/api/{id}")
+    public ResponseEntity<byte[]> imageApi(@PathVariable Long id) {
+        image tmp = service.getImage(id);
+        byte[] imagebyte = tmp.getData();
+        return new ResponseEntity<byte[]>(imagebyte, null, HttpStatus.SC_OK);
+    }
+    
+    @GetMapping("/show/api/{id}")
+    public String show_image_api(@PathVariable Long id, Model model) {
+        model.addAttribute("id", id);
+        return "file/display_api";
     }
 
     @GetMapping("/test")
