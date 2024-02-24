@@ -1,6 +1,7 @@
 package com.example.demo.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,6 +16,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.example.demo.jwt.jwtAuthenticationFilter;
 import com.example.demo.jwt.jwtAuthorizationFilter;
@@ -34,7 +38,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableMethodSecurity(
     prePostEnabled = true, 
     securedEnabled = true, 
-    jsr250Enabled = true)
+    jsr250Enabled = true
+    )
 public class SecurityConfig {
 
     @Autowired
@@ -42,6 +47,11 @@ public class SecurityConfig {
     
     @Autowired
     private final jwtProvider tokenProvider;
+
+    
+    @Qualifier("corsConfig")
+    @Autowired
+    CorsConfigurationSource corsConfig;
 
     @Autowired
     redis_repository repoR;
@@ -56,7 +66,10 @@ public class SecurityConfig {
         //     .requestMatchers(new AntPathRequestMatcher("/user/admin"))
         //     .hasRole("Admin")
         //     .anyRequest().permitAll());
-        
+        http.cors(c -> c
+            .configurationSource(corsConfig)
+            );
+
         http.httpBasic((basic) -> basic.disable());
         http.apply(new jwtDsl(tokenProvider));
         http.apply(new sessionDsl());
