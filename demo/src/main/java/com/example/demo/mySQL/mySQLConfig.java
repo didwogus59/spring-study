@@ -52,7 +52,7 @@ public class mySQLConfig {
         em.setPackagesToScan(new String[] {"com.example.demo.mySQL"});
 
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
-        adapter.setShowSql(false);
+        adapter.setShowSql(true);
         adapter.setGenerateDdl(true);
         em.setJpaVendorAdapter(adapter);
 

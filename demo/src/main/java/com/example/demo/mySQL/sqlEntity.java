@@ -9,6 +9,8 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Setter
 @Getter
@@ -26,6 +28,7 @@ public class sqlEntity {
     @Column
     private String data;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "parent", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<sqlChild> childs = new ArrayList<>();
 

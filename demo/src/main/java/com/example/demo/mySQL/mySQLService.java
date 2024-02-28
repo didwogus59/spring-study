@@ -64,6 +64,7 @@ public class mySQLService {
         Optional<sqlEntity> entity = repo.findById(id);
         repoC.save(new sqlChild(entity.get(), data));
     }
+    
     @Transactional
     public List<sqlChild> getChilds(Long id) {
         Optional<sqlEntity> entity = repo.findById(id);

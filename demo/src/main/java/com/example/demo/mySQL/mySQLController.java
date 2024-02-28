@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.test;
 import com.example.demo.mongodb.test_db;
 
+import java.util.List;
 @Controller
 @RequestMapping("/mysql")
 public class mySQLController {
@@ -39,8 +40,9 @@ public class mySQLController {
     public String detail_data(@PathVariable Long id, Model model) {
         
         sqlEntity detail = service.get_data(id).get();
+        List<sqlChild> childs = detail.getChilds();
         model.addAttribute("detail", detail);
-        model.addAttribute("childList", detail.getChilds());
+        model.addAttribute("childList", service.getChilds(id));
         return "db/mySQLdetail";
     }
 
@@ -73,4 +75,5 @@ public class mySQLController {
     public String delete_child(@PathVariable Long id,@PathVariable Long child_id, @RequestParam String data) {
         service.delete_child(child_id);
         return "redirect:/mysql/" + id;
-    }}
+    }
+}
