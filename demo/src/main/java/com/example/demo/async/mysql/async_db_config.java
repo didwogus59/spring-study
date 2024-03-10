@@ -26,7 +26,7 @@ import java.util.*;
 @PropertySource("classpath:asyncDB.properties")
 public class async_db_config {
 
-    @Value("${url}")
+    @Value("${sql_async_url}")
     private String url;
 
     @Value("${name}")
