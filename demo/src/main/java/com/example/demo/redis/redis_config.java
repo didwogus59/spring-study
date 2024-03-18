@@ -8,6 +8,8 @@ import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactor
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+import io.lettuce.core.RedisClient;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -34,5 +36,11 @@ public class redis_config {
         template.setValueSerializer(new StringRedisSerializer());
         template.setConnectionFactory(redisConnectionFactory());
         return template;
+    }
+
+    @Bean
+    public RedisClient RedisClient() {
+        RedisClient client = RedisClient.create(String.format("redis://%s:%s",host,port));
+        return client;
     }
 }

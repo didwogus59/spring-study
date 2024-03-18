@@ -12,7 +12,7 @@ import io.lettuce.core.pubsub.api.sync.RedisPubSubCommands;
 
 @Service
 public class pubsub_service {
-
+    
     RedisClient client = null;
     StatefulRedisPubSubConnection<String, String> connect = null;
 
@@ -20,9 +20,9 @@ public class pubsub_service {
     @Autowired
     RedisTemplate<String, String> template;
 
-    public pubsub_service() {  
-        client = RedisClient.create("redis://localhost:6379");
-
+    @Autowired
+    public pubsub_service(RedisClient client) {  
+        this.client = client;
         connect = client.connectPubSub();
 
         connect.addListener(new RedisPubSubListener<String,String>() {
