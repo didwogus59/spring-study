@@ -55,7 +55,11 @@ dependencies {
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0'
 
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	
+
+	implementation 'org.springframework.data:spring-data-r2dbc'
+
+	implementation 'com.oracle.database.r2dbc:oracle-r2dbc'
+
 	}
 
 tasks.named('test') {

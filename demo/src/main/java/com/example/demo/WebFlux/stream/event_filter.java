@@ -10,6 +10,7 @@ import jakarta.servlet.ServletResponse;
 
 public class event_filter implements Filter {
 
+
     simple_event event;
     public event_filter(simple_event event) {
         this.event = event;

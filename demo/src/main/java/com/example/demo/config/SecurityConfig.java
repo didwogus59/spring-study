@@ -79,7 +79,8 @@ public class SecurityConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.ALWAYS));
 
         http.csrf((csrf) -> csrf
-            .ignoringRequestMatchers(new AntPathRequestMatcher("/form/**")));
+            .ignoringRequestMatchers(new AntPathRequestMatcher("/form/**"))
+            .ignoringRequestMatchers(new AntPathRequestMatcher("/webclient")));
 
         // http.csrf((csrf) -> csrf.disable());
         

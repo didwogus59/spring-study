@@ -22,4 +22,8 @@ public class image {
     @Lob
     @Column(length = 16777215) 
     private byte[] data = null;
+
+    public byte[] getData() {
+        return data;
+    }
 }
