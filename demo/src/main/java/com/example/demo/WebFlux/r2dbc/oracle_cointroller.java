@@ -45,7 +45,7 @@ public class oracle_cointroller {
 
     @PutMapping("/{param}")
     public String updateData(@RequestParam int param, @ModelAttribute oracle_test test) {
-        test.setId((long)param);
+        test.setId(param);
         repo.save(test);
         return "home";
     }

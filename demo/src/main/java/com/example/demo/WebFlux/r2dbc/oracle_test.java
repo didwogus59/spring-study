@@ -8,13 +8,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table("test")
+@Table("TEST")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class oracle_test {
     @Column("DATA") private String data;
     @Column("TITLE") private String title;
-    @Column("ID") @Id private Long id;
+    @Column("ID") @Id private int id;
     
 }
