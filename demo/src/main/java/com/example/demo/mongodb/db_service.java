@@ -6,10 +6,12 @@ import java.util.Optional;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.test;
 
+import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transaction;
 
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -127,6 +129,11 @@ public class db_service {
             System.out.println("no test_db error");
         }
         return child;
+    }
+
+    //criteria로 한 번 해봤다
+    public void create_child3(ObjectId parentId, String data) {
+        
     }
 
     public void delete_child(ObjectId parentId, ObjectId childId) {

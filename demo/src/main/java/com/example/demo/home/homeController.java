@@ -23,16 +23,22 @@ import com.example.demo.user.user;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 
 
 
+@Slf4j
 @Controller
 @RequestMapping("/")
 public class homeController {
     
     @GetMapping("/")
 	public String home(Model model, HttpServletRequest req, Authentication auth) {
-        
+        log.trace("im trace");
+        log.debug("im debug");
+        log.info("im info");
+        log.warn("im warn");
+        //log.error("im error");
         String name = (String)req.getAttribute("name");
         if(name != null) {
             model.addAttribute("type", "jwt");

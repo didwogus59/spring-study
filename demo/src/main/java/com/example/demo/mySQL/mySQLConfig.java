@@ -45,6 +45,7 @@ public class mySQLConfig {
         return dataSource;
     }
 
+    @Qualifier("mySQLEM")
     @Bean
     public LocalContainerEntityManagerFactoryBean mySQLManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();

@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -23,6 +24,14 @@ public class mySQLService {
 
     @Qualifier("myTemplate")
     private JdbcTemplate template;
+
+    // @Qualifier("mySQLEM")
+    // @Autowired
+    // EntityManager em;
+
+    // public void test_em() {
+    //     em.createQuery("select data from sql_entity");
+    // }
 
     public sqlEntity create_data(String title, String data) {
         sqlEntity entity = repo.save(new sqlEntity(title, data));

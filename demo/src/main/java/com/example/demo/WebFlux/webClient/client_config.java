@@ -24,14 +24,15 @@ public class client_config {
             .trustManager(InsecureTrustManagerFactory.INSTANCE)
             .build();
 
-        HttpClient httpClient = HttpClient
-            .create()
-            .secure(t ->
-                    t.sslContext(sslContext));
+        // HttpClient httpClient = HttpClient
+        //     .create()
+        //     .secure(t ->
+        //             t.sslContext(sslContext));
+        HttpClient httpClient = HttpClient.create();
 
         WebClient client = WebClient
             .builder()
-            .baseUrl("https://localhost:5000/webclient")
+            .baseUrl("http://localhost:3000")
             .clientConnector(new ReactorClientHttpConnector(httpClient))
             .build();
             return client;

@@ -1,0 +1,1590 @@
+{
+  "instant" : {
+    "epochSecond" : 1719380710,
+    "nanoOfSecond" : 942867100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "com.example.demo.DemoApplication",
+  "message" : "Starting DemoApplication using Java 17.0.2 with PID 50888 (C:\\Users\\JaeHyun\\Desktop\\vscode\\make_web\\Spring_study\\studying_project\\demo\\build\\classes\\java\\main started by JaeHyun in C:\\Users\\JaeHyun\\Desktop\\vscode\\make_web\\Spring_study\\studying_project)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 8866400
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "com.example.demo.DemoApplication",
+  "message" : "No active profile set, falling back to 1 default profile: \"default\"",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 51869300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.boot.devtools.restart.ChangeableUrls",
+  "message" : "The Class-Path manifest attribute in C:\\Users\\JaeHyun\\.jdks\\openjdk-21\\caches\\modules-2\\files-2.1\\com.oracle.database.jdbc\\ojdbc11\\21.9.0.0\\1aad2e20684ee075bb9ebdca2d83f028e4fd35fa\\ojdbc11-21.9.0.0.jar referenced one or more files that do not exist: file:/C:/Users/JaeHyun/.jdks/openjdk-21/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc11/21.9.0.0/1aad2e20684ee075bb9ebdca2d83f028e4fd35fa/oraclepki.jar",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 52867300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor",
+  "message" : "Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 53867800
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor",
+  "message" : "For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 646274200
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 647274000
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 756862900
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 102 ms. Found 1 JPA repository interfaces.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 763864200
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 764871500
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 770863400
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 4 ms. Found 1 Elasticsearch repository interfaces.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 771863100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 771863100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 777863000
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 5 ms. Found 1 JPA repository interfaces.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 779000900
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 779525700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data JPA repositories in DEFAULT mode.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380711,
+    "nanoOfSecond" : 789429900
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 82050900
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 83049400
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 108049300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.example.demo.async.mysql.async_db_repository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 111050100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.example.demo.imageHandling.imageRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 114632600
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.example.demo.mongodb.child_repository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 116235400
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.example.demo.mongodb.db_repository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 117301000
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.example.demo.mySQL.mySQLRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 117833700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.example.demo.mySQL.sqlChildRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 121057400
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.example.demo.redis.redis_repository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 122683100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.example.demo.user.user_repository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 124816300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.example.demo.WebFlux.r2dbc.oracle_repository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 125344200
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 41 ms. Found 0 Reactive Elasticsearch repository interfaces.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 132264700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 132787800
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 138616700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.async.mysql.async_db_repository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 140219100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.elasticSearch.elasticRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 141288100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.imageHandling.imageRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 142975600
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.mySQL.mySQLRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 142975600
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.mySQL.sqlChildRepository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 143895200
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.redis.redis_repository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 145421700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data MongoDB - Could not safely identify store assignment for repository candidate interface com.example.demo.WebFlux.r2dbc.oracle_repository; If you want this repository to be a MongoDB repository, consider annotating your entities with one of these annotations: org.springframework.data.mongodb.core.mapping.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.mongodb.repository.MongoRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 152937800
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 19 ms. Found 3 MongoDB repository interfaces.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 165971500
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 167032300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 171913500
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data R2DBC - Could not safely identify store assignment for repository candidate interface com.example.demo.async.mysql.async_db_repository; If you want this repository to be a R2DBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table (preferred), or consider extending one of the following types with your repository: org.springframework.data.r2dbc.repository.R2dbcRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 172970300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data R2DBC - Could not safely identify store assignment for repository candidate interface com.example.demo.elasticSearch.elasticRepository; If you want this repository to be a R2DBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table (preferred), or consider extending one of the following types with your repository: org.springframework.data.r2dbc.repository.R2dbcRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 173561100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data R2DBC - Could not safely identify store assignment for repository candidate interface com.example.demo.imageHandling.imageRepository; If you want this repository to be a R2DBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table (preferred), or consider extending one of the following types with your repository: org.springframework.data.r2dbc.repository.R2dbcRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 174092100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data R2DBC - Could not safely identify store assignment for repository candidate interface com.example.demo.mongodb.child_repository; If you want this repository to be a R2DBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table (preferred), or consider extending one of the following types with your repository: org.springframework.data.r2dbc.repository.R2dbcRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 175154700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data R2DBC - Could not safely identify store assignment for repository candidate interface com.example.demo.mongodb.db_repository; If you want this repository to be a R2DBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table (preferred), or consider extending one of the following types with your repository: org.springframework.data.r2dbc.repository.R2dbcRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 175689100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data R2DBC - Could not safely identify store assignment for repository candidate interface com.example.demo.mySQL.mySQLRepository; If you want this repository to be a R2DBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table (preferred), or consider extending one of the following types with your repository: org.springframework.data.r2dbc.repository.R2dbcRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 176753800
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data R2DBC - Could not safely identify store assignment for repository candidate interface com.example.demo.mySQL.sqlChildRepository; If you want this repository to be a R2DBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table (preferred), or consider extending one of the following types with your repository: org.springframework.data.r2dbc.repository.R2dbcRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 177285900
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data R2DBC - Could not safely identify store assignment for repository candidate interface com.example.demo.redis.redis_repository; If you want this repository to be a R2DBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table (preferred), or consider extending one of the following types with your repository: org.springframework.data.r2dbc.repository.R2dbcRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 177823800
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data R2DBC - Could not safely identify store assignment for repository candidate interface com.example.demo.user.user_repository; If you want this repository to be a R2DBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table (preferred), or consider extending one of the following types with your repository: org.springframework.data.r2dbc.repository.R2dbcRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 182223100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 14 ms. Found 1 R2DBC repository interfaces.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 191419500
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Multiple Spring Data modules found, entering strict repository configuration mode",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 193538000
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Bootstrapping Spring Data Redis repositories in DEFAULT mode.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 210837300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.async.mysql.async_db_repository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 211855300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.elasticSearch.elasticRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 212847600
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.imageHandling.imageRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 213846700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.mongodb.child_repository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 214851700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.mongodb.db_repository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 214851700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.mySQL.mySQLRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 215851200
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.mySQL.sqlChildRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 216846400
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.user.user_repository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 217850900
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport",
+  "message" : "Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.WebFlux.r2dbc.oracle_repository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380712,
+    "nanoOfSecond" : 223706200
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.repository.config.RepositoryConfigurationDelegate",
+  "message" : "Finished Spring Data repository scanning in 22 ms. Found 1 Redis repository interfaces.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380713,
+    "nanoOfSecond" : 302243200
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat initialized with port(s): 5000 (https)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380713,
+    "nanoOfSecond" : 315243600
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Initializing ProtocolHandler [\"https-jsse-nio-127.0.0.1-5000\"]",
+  "endOfBatch" : false,
+  "loggerFqcn" : "java.util.logging.Logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380713,
+    "nanoOfSecond" : 323244300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.apache.catalina.core.StandardService",
+  "message" : "Starting service [Tomcat]",
+  "endOfBatch" : false,
+  "loggerFqcn" : "java.util.logging.Logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380713,
+    "nanoOfSecond" : 324245100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.apache.catalina.core.StandardEngine",
+  "message" : "Starting Servlet engine: [Apache Tomcat/10.1.15]",
+  "endOfBatch" : false,
+  "loggerFqcn" : "java.util.logging.Logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380713,
+    "nanoOfSecond" : 430244500
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]",
+  "message" : "Initializing Spring embedded WebApplicationContext",
+  "endOfBatch" : false,
+  "loggerFqcn" : "java.util.logging.Logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380713,
+    "nanoOfSecond" : 432244300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext",
+  "message" : "Root WebApplicationContext: initialization completed in 2377 ms",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380713,
+    "nanoOfSecond" : 869618400
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.EntityManagerMessageLogger_$logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380713,
+    "nanoOfSecond" : 954617900
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.hibernate.Version",
+  "message" : "HHH000412: Hibernate ORM core version 6.2.13.Final",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.CoreMessageLogger_$logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380713,
+    "nanoOfSecond" : 960289400
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.hibernate.cfg.Environment",
+  "message" : "HHH000406: Using bytecode reflection optimizer",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.CoreMessageLogger_$logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380714,
+    "nanoOfSecond" : 302530500
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380714,
+    "nanoOfSecond" : 576572000
+  },
+  "thread" : "restartedMain",
+  "level" : "WARN",
+  "loggerName" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.log.DeprecationLogger_$logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 152185100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.CoreMessageLogger_$logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 205606500
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 218219200
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.EntityManagerMessageLogger_$logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 233220800
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 254698300
+  },
+  "thread" : "restartedMain",
+  "level" : "WARN",
+  "loggerName" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.log.DeprecationLogger_$logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 299512700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.CoreMessageLogger_$logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 320493700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 326598200
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.hibernate.jpa.internal.util.LogHelper",
+  "message" : "HHH000204: Processing PersistenceUnitInfo [name: default]",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.EntityManagerMessageLogger_$logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 340597800
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo",
+  "message" : "No LoadTimeWeaver setup: ignoring JPA class transformer",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 358728600
+  },
+  "thread" : "restartedMain",
+  "level" : "WARN",
+  "loggerName" : "org.hibernate.orm.deprecation",
+  "message" : "HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.log.DeprecationLogger_$logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 485362700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator",
+  "message" : "HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.CoreMessageLogger_$logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380715,
+    "nanoOfSecond" : 528007700
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean",
+  "message" : "Initialized JPA EntityManagerFactory for persistence unit 'default'",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380716,
+    "nanoOfSecond" : 7106800
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.mongodb.driver.client",
+  "message" : "MongoClient with metadata {\"driver\": {\"name\": \"mongo-java-driver|sync|spring-boot\", \"version\": \"4.9.1\"}, \"os\": {\"type\": \"Windows\", \"name\": \"Windows 10\", \"architecture\": \"amd64\", \"version\": \"10.0\"}, \"platform\": \"Java/Oracle Corporation/17.0.2+8-86\"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@8345688, com.mongodb.Jep395RecordCodecProvider@205c6e47]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.slf4j.Log4jLogger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380716,
+    "nanoOfSecond" : 19028300
+  },
+  "thread" : "cluster-ClusterId{value='667baaeb91c7464a9f2ce900', description='null'}-localhost:27017",
+  "level" : "INFO",
+  "loggerName" : "org.mongodb.driver.cluster",
+  "message" : "Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=29425900}",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.slf4j.Log4jLogger",
+  "threadId" : 35,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380716,
+    "nanoOfSecond" : 156273300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer",
+  "message" : "LiveReload server is running on port 35729",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380717,
+    "nanoOfSecond" : 308146900
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.data.jpa.repository.query.QueryEnhancerFactory",
+  "message" : "Hibernate is in classpath; If applicable, HQL parser will be used.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380718,
+    "nanoOfSecond" : 340378800
+  },
+  "thread" : "restartedMain",
+  "level" : "WARN",
+  "loggerName" : "org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration",
+  "message" : "spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380718,
+    "nanoOfSecond" : 490377400
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.security.web.DefaultSecurityFilterChain",
+  "message" : "Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@18f9f3ce, org.springframework.security.web.session.ForceEagerSessionCreationFilter@d6822b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75ae77c7, org.springframework.security.web.context.SecurityContextHolderFilter@571cac98, org.springframework.security.web.header.HeaderWriterFilter@701580f1, org.springframework.web.filter.CorsFilter@78b126d9, org.springframework.security.web.csrf.CsrfFilter@60130a5a, org.springframework.security.web.authentication.logout.LogoutFilter@4f354c5b, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@75a5d958, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@267f84bb, com.example.demo.jwt.jwtAuthenticationFilter@2f81dd82, com.example.demo.user.customAuthenticationFilter@1bf2d583, com.example.demo.jwt.jwtAuthorizationFilter@1de48975, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bb9f422, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5cfd5d67, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c12e3fe, org.springframework.security.web.session.SessionManagementFilter@28d3ee00, org.springframework.security.web.access.ExceptionTranslationFilter@685ce027]",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380718,
+    "nanoOfSecond" : 999150600
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.apache.coyote.http11.Http11NioProtocol",
+  "message" : "Starting ProtocolHandler [\"https-jsse-nio-127.0.0.1-5000\"]",
+  "endOfBatch" : false,
+  "loggerFqcn" : "java.util.logging.Logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380719,
+    "nanoOfSecond" : 30153200
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.apache.tomcat.util.net.NioEndpoint.certificate",
+  "message" : "Connector [https-jsse-nio-127.0.0.1-5000], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\\Users\\JaeHyun\\.keystore] using alias [bootsecurity] with trust store [null]",
+  "endOfBatch" : false,
+  "loggerFqcn" : "java.util.logging.Logger",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380719,
+    "nanoOfSecond" : 44152100
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.boot.web.embedded.tomcat.TomcatWebServer",
+  "message" : "Tomcat started on port(s): 5000 (https) with context path ''",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380719,
+    "nanoOfSecond" : 46151900
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.messaging.simp.broker.SimpleBrokerMessageHandler",
+  "message" : "Starting...",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380719,
+    "nanoOfSecond" : 47151300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.messaging.simp.broker.SimpleBrokerMessageHandler",
+  "message" : "BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@55d8caaf]]",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380719,
+    "nanoOfSecond" : 49154300
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.messaging.simp.broker.SimpleBrokerMessageHandler",
+  "message" : "Started.",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380719,
+    "nanoOfSecond" : 57153600
+  },
+  "thread" : "restartedMain",
+  "level" : "INFO",
+  "loggerName" : "com.example.demo.DemoApplication",
+  "message" : "Started DemoApplication in 8.413 seconds (process running for 9.302)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 26,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380725,
+    "nanoOfSecond" : 660021200
+  },
+  "thread" : "https-jsse-nio-127.0.0.1-5000-exec-3",
+  "level" : "INFO",
+  "loggerName" : "org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]",
+  "message" : "Initializing Spring DispatcherServlet 'dispatcherServlet'",
+  "endOfBatch" : false,
+  "loggerFqcn" : "java.util.logging.Logger",
+  "threadId" : 100,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380725,
+    "nanoOfSecond" : 661020300
+  },
+  "thread" : "https-jsse-nio-127.0.0.1-5000-exec-3",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.web.servlet.DispatcherServlet",
+  "message" : "Initializing Servlet 'dispatcherServlet'",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 100,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380725,
+    "nanoOfSecond" : 662020000
+  },
+  "thread" : "https-jsse-nio-127.0.0.1-5000-exec-3",
+  "level" : "INFO",
+  "loggerName" : "org.springframework.web.servlet.DispatcherServlet",
+  "message" : "Completed initialization in 1 ms",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.LogAdapter$Log4jLog",
+  "threadId" : 100,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380725,
+    "nanoOfSecond" : 748526400
+  },
+  "thread" : "https-jsse-nio-127.0.0.1-5000-exec-3",
+  "level" : "INFO",
+  "loggerName" : "com.example.demo.home.homeController",
+  "message" : "im info",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.slf4j.Log4jLogger",
+  "threadId" : 100,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380725,
+    "nanoOfSecond" : 748526400
+  },
+  "thread" : "https-jsse-nio-127.0.0.1-5000-exec-3",
+  "level" : "WARN",
+  "loggerName" : "com.example.demo.home.homeController",
+  "message" : "im warn",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.slf4j.Log4jLogger",
+  "threadId" : 100,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380727,
+    "nanoOfSecond" : 991686600
+  },
+  "thread" : "https-jsse-nio-127.0.0.1-5000-exec-9",
+  "level" : "INFO",
+  "loggerName" : "com.example.demo.home.homeController",
+  "message" : "im info",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.slf4j.Log4jLogger",
+  "threadId" : 106,
+  "threadPriority" : 5,
+  "service" : "simple"
+}
+{
+  "instant" : {
+    "epochSecond" : 1719380727,
+    "nanoOfSecond" : 992212600
+  },
+  "thread" : "https-jsse-nio-127.0.0.1-5000-exec-9",
+  "level" : "WARN",
+  "loggerName" : "com.example.demo.home.homeController",
+  "message" : "im warn",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.slf4j.Log4jLogger",
+  "threadId" : 106,
+  "threadPriority" : 5,
+  "service" : "simple"
+}

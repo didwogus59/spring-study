@@ -15,6 +15,12 @@ repositories {
 	mavenCentral()
 }
 
+configurations {
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+}
+
 dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -60,6 +66,7 @@ dependencies {
 
 	implementation 'com.oracle.database.r2dbc:oracle-r2dbc'
 
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
 	}
 
 tasks.named('test') {

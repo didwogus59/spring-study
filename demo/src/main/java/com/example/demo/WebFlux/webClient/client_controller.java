@@ -54,24 +54,29 @@ public class client_controller {
 
     @GetMapping("/get/test/block") 
     public Mono<String> test_block() throws SSLException {
-        Mono<String> mono = client
-            .get()
-            .uri("/testBlock")
-            .retrieve()
-            .bodyToMono(String.class);
-        mono.block();
+        Mono<String> mono = null;
+        for(int i = 0; i < 100; i++) {
+            mono = client
+                .get()
+                .uri("/board/653b4374c86fa1ed10374647")
+                .retrieve()
+                .bodyToMono(String.class);
+            mono.block();
+        }
         return mono;
 
     }
 
     @GetMapping("/get/test/nonblock") 
     public Mono<String> test_nonblock() throws SSLException {
-        Mono<String> mono = client
-            .get()
-            .uri("/testBlock")
-            .retrieve()
-            .bodyToMono(String.class).log();
-        //mono.subscribe();
+        Mono<String> mono = null;
+        for(int i = 0; i < 100; i++) {
+            mono = client
+                .get()
+                .uri("/board/653b4374c86fa1ed10374647")
+                .retrieve()
+                .bodyToMono(String.class);
+        }
         return mono;
     }
 
