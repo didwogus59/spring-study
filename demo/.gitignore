@@ -53,3 +53,7 @@ docker
 myData.txt
 
 testJarPro.properties
+
+logs/
+
+.log

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import jakarta.annotation.Resource;
 
+@Repository
 public interface mySQLRepository extends JpaRepository<sqlEntity, Long> {
 }
 

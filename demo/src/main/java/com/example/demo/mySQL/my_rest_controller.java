@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@RequestMapping("mysql/rest")
+@RequestMapping("/mysql/rest")
 public class my_rest_controller {
     
     @Autowired
