@@ -25,6 +25,7 @@ public class aop_aspect {
     public void beforeParameterLog(JoinPoint joinPoint) {
         // 메서드 정보 받아오기
         Method method = getMethod(joinPoint);
+        log.info("======= AOP Before =======");
         log.info("======= method name = {} =======", method.getName());
 
         // 파라미터 받아오기
@@ -39,6 +40,7 @@ public class aop_aspect {
                 }
             }
         }
+        log.info("======= AOP Before END=======");
     }
 
     // Poincut에 의해 필터링된 경로로 들어오는 경우 메서드 리턴 후에 적용
@@ -46,10 +48,12 @@ public class aop_aspect {
     public void afterReturnLog(JoinPoint joinPoint, Object returnObj) {
         // 메서드 정보 받아오기
         Method method = getMethod(joinPoint);
+        log.info("======= AOP After =======");
         log.info("======= method name = {} =======", method.getName());
 
         // log.info("return type = {}", returnObj.getClass().getSimpleName());
         log.info("return value = {}", returnObj);
+        log.info("======= AOP After END =======");
     }
 
     // JoinPoint로 메서드 정보 가져오기
