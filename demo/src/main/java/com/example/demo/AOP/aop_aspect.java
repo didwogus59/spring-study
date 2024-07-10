@@ -26,21 +26,21 @@ public class aop_aspect {
         // 메서드 정보 받아오기
         Method method = getMethod(joinPoint);
         log.info("======= AOP Before =======");
-        log.info("======= method name = {} =======", method.getName());
+        // log.info("======= method name = {} =======", method.getName());
 
-        // 파라미터 받아오기
-        Object[] args = joinPoint.getArgs();
-        System.out.println(args.length);
-        if (args.length <= 0) log.info("no parameter");
-        else {
-            for (Object arg : args) {
-                if(arg != null) {
-                    log.info("parameter type = {}", arg.getClass());
-                    log.info("parameter value = {}", arg);
-                }
-            }
-        }
-        log.info("======= AOP Before END=======");
+        // // 파라미터 받아오기
+        // Object[] args = joinPoint.getArgs();
+        // System.out.println(args.length);
+        // if (args.length <= 0) log.info("no parameter");
+        // else {
+        //     for (Object arg : args) {
+        //         if(arg != null) {
+        //             log.info("parameter type = {}", arg.getClass());
+        //             log.info("parameter value = {}", arg);
+        //         }
+        //     }
+        // }
+        // log.info("======= AOP Before END=======");
     }
 
     // Poincut에 의해 필터링된 경로로 들어오는 경우 메서드 리턴 후에 적용
@@ -49,11 +49,11 @@ public class aop_aspect {
         // 메서드 정보 받아오기
         Method method = getMethod(joinPoint);
         log.info("======= AOP After =======");
-        log.info("======= method name = {} =======", method.getName());
+        // log.info("======= method name = {} =======", method.getName());
 
-        // log.info("return type = {}", returnObj.getClass().getSimpleName());
-        log.info("return value = {}", returnObj);
-        log.info("======= AOP After END =======");
+        // // log.info("return type = {}", returnObj.getClass().getSimpleName());
+        // log.info("return value = {}", returnObj);
+        // log.info("======= AOP After END =======");
     }
 
     // JoinPoint로 메서드 정보 가져오기

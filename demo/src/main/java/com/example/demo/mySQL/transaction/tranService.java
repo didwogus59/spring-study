@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class tranService {
-    
+
     @Autowired
     tranRepository repo;
 

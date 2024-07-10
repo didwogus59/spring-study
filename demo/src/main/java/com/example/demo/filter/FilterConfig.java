@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.filter;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

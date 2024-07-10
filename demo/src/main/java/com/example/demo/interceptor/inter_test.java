@@ -12,8 +12,8 @@ public class inter_test implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         log.info("==============Interceptor Pre Handle==============");
-        log.info("Request URI ===> " + request.getRequestURI());
-        log.info("==============Interceptor Pre Handle END==============");
+        //log.info("Request URI ===> " + request.getRequestURI());
+        //log.info("==============Interceptor Pre Handle END==============");
         return HandlerInterceptor.super.preHandle(request, response, handler);
     }
 
@@ -21,7 +21,7 @@ public class inter_test implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         
         log.info("==============Interceptor Post Handle==============");
-        log.info("==============Interceptor Post Handle END==============");
+        //log.info("==============Interceptor Post Handle END==============");
         HandlerInterceptor.super.postHandle(request, response, handler, modelAndView);
     }
 }
