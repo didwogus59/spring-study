@@ -24,7 +24,7 @@ public class tranController {
             return name;
         
         } catch (Exception e){
-            return e.getMessage();
+            return "input is error";
         }
         
     }
