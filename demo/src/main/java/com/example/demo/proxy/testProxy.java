@@ -1,14 +1,13 @@
 package com.example.demo.proxy;
 
-public class testProxy implements test{
-
-    test test;
+public class TestProxy implements Test {
+    private Test test;
+    
     @Override
     public String hello() {
         if(test == null) {
-            test = new testImpl();
+            test = new TestImpl();
         }
         return test.hello() + " + proxy";
     }
-    
 }

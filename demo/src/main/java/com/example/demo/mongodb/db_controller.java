@@ -22,37 +22,37 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/mongoDB")
-public class db_controller {
+public class MongoDbController {
     @Autowired
-    private db_service service;
+    private MongoDbService service;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String all_data(Model model) {
-        model.addAttribute("testList", service.all_data());
+    public String allData(Model model) {
+        model.addAttribute("testList", service.allData());
         return "db/mongoDBboard";
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String create_data(@ModelAttribute test_db test, Model model) {
-        service.create_data(test.getTitle(), test.getData());
-        model.addAttribute("testList", service.all_data());
+    public String createData(@ModelAttribute test_db test, Model model) {
+        service.createData(test.getTitle(), test.getData());
+        model.addAttribute("testList", service.allData());
         return "db/mongoDBboard";
     }
 
-    
+
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
-    public String detail_data(@PathVariable ObjectId id, Model model) {
-        
-        test_db detail = service.get_data(id).get();
+    public String detailData(@PathVariable ObjectId id, Model model) {
+
+        test_db detail = service.getData(id).get();
         model.addAttribute("detail", detail);
         model.addAttribute("childList", detail.getChilds());
         return "db/mongoDBDetail";
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.POST)
-    public String update_data(@PathVariable ObjectId id, @ModelAttribute test test, Model model) {
-        
-        test_db detail = service.update_data(id, test.getTitle(),test.getData());
+    public String updateData(@PathVariable ObjectId id, @ModelAttribute test test, Model model) {
+
+        test_db detail = service.updateData(id, test.getTitle(),test.getData());
         if(detail == null) {
             //check error later
             return "db/mongoDBDetail";
@@ -63,21 +63,21 @@ public class db_controller {
     }
 
     @RequestMapping(path = "/{id}/delete", method = RequestMethod.POST)
-    public String delete_data(@PathVariable ObjectId id, Model model) {
-        service.delete_data(id);
+    public String deleteData(@PathVariable ObjectId id, Model model) {
+        service.deleteData(id);
         return "redirect:/mongoDB";
     }
-    
+
     @RequestMapping(path = "/{id}/child", method = RequestMethod.POST)
-    public String create_child(@PathVariable ObjectId id, @RequestParam String data, Model model) {
-        service.create_child2(id, data);
+    public String createChild(@PathVariable ObjectId id, @RequestParam String data, Model model) {
+        service.createChild2(id, data);
         return "redirect:/mongoDB/"+id;
     }
-    
+
     //
     @RequestMapping(path = "/{id}/child/{child_id}/delete", method = RequestMethod.POST)
-    public String delete_child(@PathVariable ObjectId id,@PathVariable ObjectId child_id, Model model) {
-        service.delete_child(id, child_id);
+    public String deleteChild(@PathVariable ObjectId id,@PathVariable ObjectId child_id, Model model) {
+        service.deleteChild(id, child_id);
         return "redirect:/mongoDB/"+id;
     }
 }

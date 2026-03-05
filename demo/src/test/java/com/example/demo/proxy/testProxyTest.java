@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class testProxyTest {
+public class TestProxyTest {
 
-    test test = new testProxy();
+    Test test = new TestProxy();
     @Test
     void testHello() {
         assertEquals(test.hello(), "proxy_test_impl_hello + proxy");

@@ -2,61 +2,59 @@ package com.example.demo.user;
 
 import java.util.Optional;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.exception.UserNotFoundException;
+
 @Service
-public class user_service {
+public class UserService {
     
     @Autowired
-    private user_repository repository;
+    private UserRepository userRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public Boolean login_session(user user) {
-        Optional<user> login_user = repository.findByName(user.getName());
-        String hash_password = login_user.get().getPassword();
-        if(!login_user.isPresent()) {
+    public Boolean loginSession(User user) {
+        Optional<User> loginUser = userRepository.findByName(user.getName());
+        if (!loginUser.isPresent()) {
             return false;
         }
-        System.out.println(login_user.get().getPassword());
-        if(passwordEncoder.matches(user.getPassword(), hash_password)) {
-            System.out.println("user service login true");
+        String hashPassword = loginUser.get().getPassword();
+        if (passwordEncoder.matches(user.getPassword(), hashPassword)) {
             return true;
         }
         return false;
     }
 
-    public Boolean create_user(user user) {
-        Optional<user> check = repository.findByName(user.getName());
-        if(!check.isPresent()) {
+    public Boolean createUser(User user) {
+        Optional<User> check = userRepository.findByName(user.getName());
+        if (!check.isPresent()) {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
-            user.setRole("User");
-            repository.insert(user);
+            user.setRole("ROLE_USER");
+            userRepository.save(user);
             return true;
         }
         return false;
     }
 
-    public Boolean login_jwt(user user) {
-        Optional<user> login_user = repository.findByName(user.getName());
-        String hash_password = login_user.get().getPassword();
-        if(!login_user.isPresent()) {
+    public Boolean loginJwt(User user) {
+        Optional<User> loginUser = userRepository.findByName(user.getName());
+        if (!loginUser.isPresent()) {
+            // Return false instead of throwing exception for security reasons
             return false;
         }
-        System.out.println(login_user.get().getPassword());
-        if(passwordEncoder.matches(user.getPassword(), hash_password)) {
-            System.out.println("true");
+        String hashPassword = loginUser.get().getPassword();
+        if (passwordEncoder.matches(user.getPassword(), hashPassword)) {
             return true;
         }
         return false;
     }
 
-    public Optional<user> getUserByName(String name) {
-        Optional<user> login_user = repository.findByName(name);
-        return login_user;
+    public User getUserByName(String name) {
+        return userRepository.findByName(name)
+                .orElseThrow(() -> new UserNotFoundException("User not found: " + name));
     }
 }

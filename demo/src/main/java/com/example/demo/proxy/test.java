@@ -1,5 +1,5 @@
 package com.example.demo.proxy;
 
-interface test {
+public interface Test {
     String hello();
 }
