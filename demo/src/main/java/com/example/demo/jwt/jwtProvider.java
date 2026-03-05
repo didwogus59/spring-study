@@ -15,10 +15,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import com.example.demo.customUserDetail.CustomDetailsService;
-import com.example.demo.user.user;
-import com.example.demo.user.user_repository;
-import com.example.demo.user.user_service;
+import com.example.demo.customUserDetail.CustomDetail;
+import com.example.demo.user.User;
+import com.example.demo.user.UserRepository;
+import com.example.demo.user.UserService;
 
 import jakarta.servlet.http.HttpServletRequest;
 import java.security.Key;
@@ -36,7 +36,7 @@ public class jwtProvider {
 
     @Value("${secret}")
     private String key;
-    
+
     private static final String AUTHORITIES_KEY = "auth";
 
     @Value("${seconds}")
@@ -48,7 +48,7 @@ public class jwtProvider {
     private long exp;
 
     @Autowired
-    private CustomDetailsService principalDetailsService;
+    private CustomDetailService principalDetailsService;
 
 
     @PostConstruct

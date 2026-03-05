@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.test;
+import com.example.demo.mongodb.MongoPost;
 
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transaction;
@@ -30,119 +30,118 @@ public class db_service {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    public List<test_db> all_data() {
+    public List<MongoPost> all_data() {
         return repository.findAll();
     }
 
 
-    public List<test_db> all_data2() {
-        return mongoTemplate.findAll(test_db.class);
+    public List<MongoPost> all_data2() {
+        return mongoTemplate.findAll(MongoPost.class);
     }
 
-    public Optional<test_db> get_data(ObjectId id) {
+    public Optional<MongoPost> get_data(ObjectId id) {
         return repository.findById(id);
     }
 
-    public List<test_db> get_data2(ObjectId id) {
+    public List<MongoPost> get_data2(ObjectId id) {
         Query query = Query.query(Criteria.where("_id").is(id));
-        return mongoTemplate.find(query, test_db.class);
+        return mongoTemplate.find(query, MongoPost.class);
     }
 
-    public test_db create_data(String title, String data) {
-        test_db test = repository.insert(new test_db(title, data));
-        return test; 
+    public MongoPost create_data(String title, String content) {
+        MongoPost post = repository.insert(new MongoPost(title, content));
+        return post;
     }
-    public test_db create_data2(String title, String data) {
-        test_db test = new test_db(title, data);
-        repository.save(test);
-        return test; 
-    }
-
-    
-    public test_db create_data3(String title, String data) {
-        test_db test = new test_db(title, data);
-        return mongoTemplate.insert(test); 
+    public MongoPost create_data2(String title, String content) {
+        MongoPost post = new MongoPost(title, content);
+        repository.save(post);
+        return post;
     }
 
-    public test_db update_data(ObjectId id, String title, String data) {
-        Optional<test_db> tmp = repository.findById(id);
-        
+
+    public MongoPost create_data3(String title, String content) {
+        MongoPost post = new MongoPost(title, content);
+        return mongoTemplate.insert(post);
+    }
+
+    public MongoPost update_data(ObjectId id, String title, String content) {
+        Optional<MongoPost> tmp = repository.findById(id);
+
         if(tmp != null) {
-            test_db test = tmp.get();
+            MongoPost post = tmp.get();
             if(title != null) {
-                test.setTitle(title);
+                post.setTitle(title);
             }
-            if(data != null)
-                test.setData(data);
+            if(content != null)
+                post.setContent(content);
 
-            repository.save(test);
-            
-            return test;
+            repository.save(post);
+
+            return post;
         }
         return null;
-        
+
     }
 
-    public void update_data2(ObjectId id, String title, String data) {
+    public void update_data2(ObjectId id, String title, String content) {
         //특정 컬렉션에 대한 쿼리 작성
         Query query = Query.query(Criteria.where("_id").is(id));
         //update할 필드와 값 설정
-        Update update = new Update().update("title", title).update("data", data);
+        Update update = new Update().update("title", title).update("content", content);
         //update 실행
-        mongoTemplate.updateFirst(query, update, test_db.class);
+        mongoTemplate.updateFirst(query, update, MongoPost.class);
     }
 
     public void delete_data(ObjectId id) {
         repository.deleteById(id);
     }
 
-    public List<mongoChild> all_child(test_db parent) {
-        return parent.getChilds();
+    public List<mongoChild> all_child(MongoPost parent) {
+        return parent.getChildren();
     }
 
     //기존 repository만 이용한 update child를 전부 읽고 수정 후 다 저장하느 방식이라 속도가 느리다
     public void create_child(ObjectId parentId, String data) {
-        Optional<test_db> tmp = repository.findById(parentId);
+        Optional<MongoPost> tmp = repository.findById(parentId);
 
         if(tmp != null) {
-            test_db test = tmp.get();
+            MongoPost post = tmp.get();
             mongoChild tmpC = new mongoChild(data);
             repositoryC.save(tmpC);
-            List<mongoChild> tmpL = test.getChilds();
+            List<mongoChild> tmpL = post.getChildren();
             tmpL.add(tmpC);
-            test.setChilds(tmpL);
-            repository.save(test);
+            post.setChildren(tmpL);
+            repository.save(post);
         }
     }
 
     //query를 따로 지정하여 만든 update 속도가 빠르다
     public mongoChild create_child2(ObjectId parentId, String data) {
         Query query = Query.query(Criteria.where("_id").is(parentId));
-        
+
         mongoChild child = repositoryC.save(new mongoChild(data));
 
-        Update update = new Update().push("childs", child);
-        
-        test_db update_test = mongoTemplate.findAndModify(query, update, test_db.class, "test");
+        Update update = new Update().push("children", child);
+
+        MongoPost update_test = mongoTemplate.findAndModify(query, update, MongoPost.class, "test");
 
         if(update_test == null) {
-            System.out.println("no test_db error");
+            System.out.println("no MongoPost error");
         }
         return child;
     }
 
     //criteria로 한 번 해봤다
     public void create_child3(ObjectId parentId, String data) {
-        
+
     }
 
     public void delete_child(ObjectId parentId, ObjectId childId) {
         Query query = Query.query(Criteria.where("_id").is(parentId));
-        Update update = new Update().pull("childs", childId);
+        Update update = new Update().pull("children", childId);
         mongoTemplate.updateFirst(query, update, Transaction.class, "test");
         if(childId != null)
             repositoryC.deleteById(childId);
     }
 
-    
 }

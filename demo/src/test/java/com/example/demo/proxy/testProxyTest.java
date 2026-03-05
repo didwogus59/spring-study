@@ -4,11 +4,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class testProxyTest {
+public class ProxyTestTest {
 
-    test test = new testProxy();
+    ProxyTarget target = new ProxyTargetImpl();
+    ProxyTest proxy = new ProxyTest(target);
+
     @Test
     void testHello() {
-        assertEquals(test.hello(), "proxy_test_impl_hello + proxy");
+        assertEquals(proxy.hello(), "proxy_test_impl_hello + proxy");
     }
 }

@@ -5,32 +5,34 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Document(collection = "test")
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Document(collection = "post")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class test_db {
+@AllArgsConstructor
+@Builder
+public class MongoPost {
 
     @Id
     private ObjectId id;
 
     private String title;
 
-    private String data;
+    private String content;
 
     @DBRef
-    List<mongoChild> childs;
+    private List<mongoChild> children = new ArrayList<>();
 
-    public test_db(String title, String data) {
+    public MongoPost(String title, String content) {
         this.title = title;
-        this.data = data;
-        this.childs = new ArrayList<mongoChild>();
+        this.content = content;
+        this.children = new ArrayList<>();
     }
 }

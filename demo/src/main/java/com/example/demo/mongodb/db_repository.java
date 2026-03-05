@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface db_repository extends MongoRepository<test_db, ObjectId> {
+public interface db_repository extends MongoRepository<MongoPost, ObjectId> {
 
 
-} 
+}

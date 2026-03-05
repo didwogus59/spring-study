@@ -8,21 +8,20 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
-import com.example.demo.user.user;
+import com.example.demo.user.User;
 
 public class CustomDetail implements UserDetails, OAuth2User{
 
-    private user user = null;
-    //private static final long serialVersionUID = 1L;
-	private Map<String, Object> attributes;
+    private User user = null;
+    private Map<String, Object> attributes;
 
-    public CustomDetail(user user) {
+    public CustomDetail(User user) {
         this.user = user;
     }
 
-    public CustomDetail(user user, Map<String, Object> attribute) {
+    public CustomDetail(User user, Map<String, Object> attributes) {
         this.user = user;
-		this.attributes = attributes;
+        this.attributes = attributes;
     }
 
     // 권한 관련 작업을 하기 위한 role return

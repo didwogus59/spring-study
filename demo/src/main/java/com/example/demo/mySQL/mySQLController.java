@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.test;
-import com.example.demo.mongodb.test_db;
+import com.example.demo.PostForm;
+import com.example.demo.mongodb.MongoPost;
 
 import java.util.List;
 @Controller
@@ -20,7 +20,7 @@ import java.util.List;
 public class mySQLController {
     
     @Autowired
-    mySQLService service;
+    SqlService service;
     
     @GetMapping()
     public String all_data(Model model) {
@@ -29,8 +29,8 @@ public class mySQLController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String create_data(@ModelAttribute sqlEntity test, Model model) {
-        service.create_data(test.getTitle(), test.getData());
+    public String create_data(@ModelAttribute SqlEntity entity, Model model) {
+        service.create_data(entity.getTitle(), entity.getContent());
         model.addAttribute("testList", service.all_data());
         return "db/mySQLBoard";
     }
@@ -39,17 +39,17 @@ public class mySQLController {
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     public String detail_data(@PathVariable Long id, Model model) {
         
-        sqlEntity detail = service.get_data(id).get();
-        List<sqlChild> childs = detail.getChilds();
+        SqlEntity detail = service.get_data(id).get();
+        List<SqlChild> children = detail.getChildren();
         model.addAttribute("detail", detail);
         model.addAttribute("childList", service.getChilds(id));
         return "db/mySQLdetail";
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.POST)
-    public String update_data(@PathVariable Long id, @ModelAttribute sqlEntity test, Model model) {
+    public String update_data(@PathVariable Long id, @ModelAttribute SqlEntity entity, Model model) {
         
-        sqlEntity detail = service.update_data(id, test.getTitle(),test.getData());
+        SqlEntity detail = service.update_data(id, entity.getTitle(),entity.getContent());
         if(detail == null) {
             //check error later
             return "db/mySQLdetail";
@@ -66,14 +66,14 @@ public class mySQLController {
     }
 
     @RequestMapping(path = "/{id}/child", method = RequestMethod.POST)
-    public String create_child(@PathVariable Long id, @RequestParam String data) {
-        service.create_child(id, data);
+    public String create_child(@PathVariable Long id, @RequestParam String content) {
+        service.create_child(id, content);
         return "redirect:/mysql/" + id;
     }
 
     @RequestMapping(path = "/{id}/child/delete/{child_id}", method = RequestMethod.POST)
-    public String delete_child(@PathVariable Long id,@PathVariable Long child_id, @RequestParam String data) {
-        service.delete_child(child_id);
+    public String delete_child(@PathVariable Long id,@PathVariable Long childId, @RequestParam String content) {
+        service.delete_child(childId);
         return "redirect:/mysql/" + id;
     }
 }

@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 @RequestMapping("/mysql/rest")
 public class my_rest_controller {
-    
+
     @Autowired
     mySQLService service;
 
-    
+
     @RequestMapping(path ="/{id}", method=RequestMethod.GET)
     public sqlEntity get_one_api() {
         return service.all_data().get(0);

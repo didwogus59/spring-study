@@ -3,7 +3,7 @@ package com.example.demo.proxy;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class testImpl implements test{
+public class ProxyTargetImpl implements ProxyTarget {
 
     @Override
     public String hello() {

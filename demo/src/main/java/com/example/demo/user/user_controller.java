@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class user_controller {
 
     @Autowired
-    private user_service service;
+    private UserService service;
 
     @Autowired
     jwtProvider jwtProvider;
@@ -53,7 +53,7 @@ public class user_controller {
     }
 
     @RequestMapping(path = "/sign", method = RequestMethod.POST)
-    public String sign_post(@ModelAttribute user user, Model model) {
+    public String sign_post(@ModelAttribute User user, Model model) {
         if(service.create_user(user))
             return "home";
         return "user/sign";

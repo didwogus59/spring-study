@@ -15,8 +15,6 @@ import org.springframework.stereotype.Component;
 
 import com.example.demo.customUserDetail.CustomDetail;
 import com.example.demo.jwt.jwtProvider;
-import com.example.demo.mongodb.db_repository;
-import com.example.demo.mongodb.test_db;
 import com.example.demo.redis.redis_repository;
 import com.example.demo.redis.redis_token;
 
@@ -29,13 +27,13 @@ import lombok.RequiredArgsConstructor;
 
 
 @RequiredArgsConstructor
-public class customAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     private final AuthenticationManager authenticationManager;
-	
+
 	redis_repository repoR;
 
-	public customAuthenticationFilter(AuthenticationManager manager, redis_repository repoR) {
+	public CustomAuthenticationFilter(AuthenticationManager manager, redis_repository repoR) {
 		authenticationManager = manager;
 		this.repoR = repoR;
 	}
@@ -43,7 +41,7 @@ public class customAuthenticationFilter extends UsernamePasswordAuthenticationFi
 	@Override
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException{
         System.out.printf("custom authenticationFilter : 진입\n");
-		
+
 		String name = null;
 		String password = null;
 		try {
@@ -63,7 +61,7 @@ public class customAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
 	@Override
 	protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse res, FilterChain chain, Authentication authResult) throws IOException, ServletException {
-		SecurityContextHolder.getContext().setAuthentication(authResult);	
+		SecurityContextHolder.getContext().setAuthentication(authResult);
 		chain.doFilter(req,res);
 		System.out.println("auth result principal: " + authResult.getPrincipal());
 		System.out.println("auth result credential: " + authResult.getCredentials());
@@ -73,10 +71,3 @@ public class customAuthenticationFilter extends UsernamePasswordAuthenticationFi
 		System.out.println("auth result detail: " + authResult.getDetails());
 	}
 }
-
-		// System.out.println("auth result principal: " + authResult.getPrincipal());
-		// System.out.println("auth result credential: " + authResult.getCredentials());
-		// System.out.println("auth result name: " + authResult.getName());
-		// //Iterator<GrantedAuthority> iterator = authResult.getAuthorities();
-		// System.out.println("auth result authority: " + authResult.getAuthorities());
-		// System.out.println("auth result detail: " + authResult.getDetails());

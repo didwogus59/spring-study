@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.example.demo.test;
+import com.example.demo.PostForm;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,7 +39,7 @@ public class homeController {
 	}
 
     @GetMapping("/json123")
-    public String json(@RequestBody test test, Model model) {
+    public String json(@RequestBody PostForm post, Model model) {
         model.addAttribute("test", test);
         
         return "json";
